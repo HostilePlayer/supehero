@@ -14,6 +14,7 @@ public class Main {
 
         System.out.println("Whelcome to the Superhero Database!");
 
+        Program.brugerValg();
     }
 
     public void brugerValg() {
@@ -24,31 +25,33 @@ public class Main {
 
         brugerInput = scanner.nextInt();
         if(brugerInput == 1){
-            Program.start();
-
-            System.out.println("please add superhero");
+            System.out.println("adding superhero");
+            Program.addHero();
         }
 
     }
 
-    public void start(){
+    public void addHero(){
         //SuperHeroList[] superHero;
         Database.setSuperHero();
 
         System.out.println("Write a the superhero's name");
-        SuperHeroList.superHeroName = scanner.next();
+        String superHeroNavn = scanner.next();
         System.out.println("Write the superhero's real name");
-        SuperHeroList.realName = scanner.next();
+        String realNavn = scanner.next();
         System.out.println("Is the Superhero human? true or false");
-        SuperHeroList.isHuman = scanner.nextBoolean();
+        boolean isHuman = scanner.nextBoolean();
         System.out.println("What year whas the hero first written about?");
-        SuperHeroList.yearOfCreation = scanner.nextInt();
+        int yearOfCreation = scanner.nextInt();
         System.out.println("how much force in Newton can the superhero do?");
-        SuperHeroList.strength = scanner.nextInt();
+        int strength = scanner.nextInt();
 
-        System.out.println("| Superhero: " + SuperHeroList.superHeroName + " | real name: " + SuperHeroList.realName
-        + " | Human: " + SuperHeroList.isHuman + " | first publish: " + SuperHeroList.yearOfCreation +
-                " | strength in newton: " + SuperHeroList.strength + " newtons");
+        System.out.println("| Superhero: " + superHeroNavn + " | real name: " + realNavn
+        + " | Human: " + isHuman + " | first publish: " + yearOfCreation +
+                " | strength in newton: " + strength + " newtons");
+
+        SuperHeroList superHero = new SuperHeroList(superHeroNavn, realNavn, isHuman,
+                yearOfCreation, strength);
 
         //superHero = new SuperHeroList[]{};
         Main Program = new Main();
