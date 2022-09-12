@@ -3,34 +3,46 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static superHeroList[] superHero;
-
     Scanner scanner = new Scanner(System.in);
+    int brugerInput;
+
+    //Database database = new Datebase();
+    //database.SuperHeroList();
 
     public static void main(String[] args) {
+        Main Program = new Main();
 
         System.out.println("Whelcome to the Superhero Database!");
+        System.out.println("1. for add superhero");
+        System.out.println("9. quit program");
+
         System.out.println("please add superhero");
 
-        Main Program = new Main();
+
         Program.start();
 
     }
 
     public void start(){
+        //SuperHeroList[] superHero;
+        Database.setSuperHero();
 
         System.out.println("Write a the superhero's name");
-        superHeroList.superHeroName = scanner.next();
+        SuperHeroList.superHeroName = scanner.next();
         System.out.println("Write the superhero's real name");
-        superHeroList.realName = scanner.next();
+        SuperHeroList.realName = scanner.next();
         System.out.println("Is the Superhero human? true or false");
-        superHeroList.isHuman = scanner.nextBoolean();
+        SuperHeroList.isHuman = scanner.nextBoolean();
         System.out.println("What year whas the hero first written about?");
-        superHeroList.yearOfCreation = scanner.nextInt();
+        SuperHeroList.yearOfCreation = scanner.nextInt();
         System.out.println("how much force in Newton can the superhero do?");
-        superHeroList.strength = scanner.nextInt();
+        SuperHeroList.strength = scanner.nextInt();
 
-        //superHeroList = new superHero[]{superHeroList.superHeroName,}
+        System.out.println("| Superhero: " + SuperHeroList.superHeroName + " | real name: " + SuperHeroList.realName
+        + " | Human: " + SuperHeroList.isHuman + " | first publish: " + SuperHeroList.yearOfCreation +
+                " | strength in newton: " + SuperHeroList.strength + " newtons");
+
+        //superHero = new SuperHeroList[]{};
     }
 
 }

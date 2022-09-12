@@ -1,6 +1,8 @@
 package dk.kea;
 
-public class superHeroList {
+public class SuperHeroList {
+
+    private static SuperHeroList[] superHero;
     public static String superHeroName;
     public static String realName;
     public static boolean isHuman;
@@ -8,7 +10,7 @@ public class superHeroList {
     public static int strength;
 
 
-    public superHeroList(String superHeroName, String realName, boolean isHuman, int yearOfCreation, int strength){
+    public SuperHeroList(String superHeroName, String realName, boolean isHuman, int yearOfCreation, int strength){
         this.superHeroName = superHeroName;
         this.realName = realName;
         this.isHuman = isHuman;
@@ -16,23 +18,23 @@ public class superHeroList {
         this.strength = strength;
     }
 
-    public String getSuperHeroName() {
+    public static String getSuperHeroName() {
         return superHeroName;
     }
 
-    public String getRealName() {
+    public static String getRealName() {
         return realName;
     }
 
-    public boolean getIsHuman() {
+    public static boolean getIsHuman() {
         return isHuman;
     }
 
-    public int getYearOfCreation() {
+    public static int getYearOfCreation() {
         return yearOfCreation;
     }
 
-    public int getStrength() {
+    public static int getStrength() {
         return strength;
     }
 }
