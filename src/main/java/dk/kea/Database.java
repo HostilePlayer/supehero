@@ -19,6 +19,8 @@ public class Database {
 
         SuperHeroList superHero5 = new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
                 SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength());
+
+        //jeg vil have den til at return superhero[0-4]
         return superHero1;
     }
 }

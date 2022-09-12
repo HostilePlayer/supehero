@@ -49,7 +49,7 @@ public class Main {
 
         SuperHeroList superHeroLists = Database.setSuperHero(superHeroNavn, realNavn, isHuman,
                 yearOfCreation, strength);
-
+            //men hvilken plads ligger jeg den?
         System.out.println("The superhero " + superHeroNavn + " added");
 
         Main Program = new Main();
