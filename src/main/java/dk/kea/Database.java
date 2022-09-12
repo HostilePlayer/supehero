@@ -3,8 +3,8 @@ package dk.kea;
 public class Database {
     //private SuperHeroList superHero = new setSuperHero();
 
-    public static void setSuperHero() {
 
+    public static SuperHeroList setSuperHero(String superHeroNavn, String realNavn, boolean isHuman, int yearOfCreation, int strength) {
         SuperHeroList superHero1 = new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
                 SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength());
 
@@ -19,6 +19,6 @@ public class Database {
 
         SuperHeroList superHero5 = new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
                 SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength());
+        return superHero1;
     }
-
 }

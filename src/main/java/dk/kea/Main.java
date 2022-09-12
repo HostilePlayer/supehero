@@ -6,9 +6,6 @@ public class Main {
     Scanner scanner = new Scanner(System.in);
     int brugerInput;
 
-    //Database database = new Datebase();
-    //database.SuperHeroList();
-
     public static void main(String[] args) {
         Main Program = new Main();
 
@@ -32,8 +29,8 @@ public class Main {
     }
 
     public void addHero(){
-        //SuperHeroList[] superHero;
-        Database.setSuperHero();
+        //Database.setSuperHero();
+        //SuperHeroList.SuperHeroList();
 
         System.out.println("Write a the superhero's name");
         String superHeroNavn = scanner.next();
@@ -50,10 +47,11 @@ public class Main {
         + " | Human: " + isHuman + " | first publish: " + yearOfCreation +
                 " | strength in newton: " + strength + " newtons");
 
-        SuperHeroList superHero = new SuperHeroList(superHeroNavn, realNavn, isHuman,
+        SuperHeroList superHeroLists = Database.setSuperHero(superHeroNavn, realNavn, isHuman,
                 yearOfCreation, strength);
 
-        //superHero = new SuperHeroList[]{};
+        System.out.println("The superhero " + superHeroNavn + " added");
+
         Main Program = new Main();
         Program.brugerValg();
     }

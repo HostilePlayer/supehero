@@ -2,7 +2,7 @@ package dk.kea;
 
 public class SuperHeroList {
 
-    private static SuperHeroList[] superHero;
+    private static SuperHeroList superHero;
     public static String superHeroName;
     public static String realName;
     public static boolean isHuman;
