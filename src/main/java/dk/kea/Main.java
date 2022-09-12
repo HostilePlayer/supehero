@@ -5,11 +5,7 @@ public class Main {
 
     Scanner scanner = new Scanner(System.in);
 
-    String superHeroName;
-    String realName;
-    boolean isHuman;
-    int yearOfCreation;
-    int Strength;
+
 
 
     public static void main(String[] args) {
@@ -25,17 +21,15 @@ public class Main {
     public void start(){
 
         System.out.println("Write a the superhero's name");
-        superHeroName = scanner.next();
+        superHeroList.superHeroName = scanner.next();
         System.out.println("Write the superhero's real name");
-        realName = scanner.next();
+        superHeroList.realName = scanner.next();
         System.out.println("Is the Superhero human? true or false");
-        isHuman = scanner.nextBoolean();
+        superHeroList.isHuman = scanner.nextBoolean();
         System.out.println("What year whas the hero first written about?");
-        yearOfCreation = scanner.nextInt();
+        superHeroList.yearOfCreation = scanner.nextInt();
         System.out.println("how much force in Newton can the superhero do?");
-        Strength = scanner.nextInt();
-
-
+        superHeroList.strength = scanner.nextInt();
 
     }
 
