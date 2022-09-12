@@ -13,13 +13,21 @@ public class Main {
         Main Program = new Main();
 
         System.out.println("Whelcome to the Superhero Database!");
+
+    }
+
+    public void brugerValg() {
+        Main Program = new Main();
+
         System.out.println("1. for add superhero");
         System.out.println("9. quit program");
 
-        System.out.println("please add superhero");
+        brugerInput = scanner.nextInt();
+        if(brugerInput == 1){
+            Program.start();
 
-
-        Program.start();
+            System.out.println("please add superhero");
+        }
 
     }
 
@@ -43,6 +51,8 @@ public class Main {
                 " | strength in newton: " + SuperHeroList.strength + " newtons");
 
         //superHero = new SuperHeroList[]{};
+        Main Program = new Main();
+        Program.brugerValg();
     }
 
 }
