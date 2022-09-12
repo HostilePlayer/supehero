@@ -3,10 +3,9 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static superHeroList[] superHero;
+
     Scanner scanner = new Scanner(System.in);
-
-
-
 
     public static void main(String[] args) {
 
@@ -31,6 +30,7 @@ public class Main {
         System.out.println("how much force in Newton can the superhero do?");
         superHeroList.strength = scanner.nextInt();
 
+        //superHeroList = new superHero[]{superHeroList.superHeroName,}
     }
 
 }

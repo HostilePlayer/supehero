@@ -2,10 +2,11 @@ package dk.kea;
 
 public class superHeroList {
     public static String superHeroName;
-    static String realName;
-    static boolean isHuman;
-    static int yearOfCreation;
-    static int strength;
+    public static String realName;
+    public static boolean isHuman;
+    public static int yearOfCreation;
+    public static int strength;
+
 
     public superHeroList(String superHeroName, String realName, boolean isHuman, int yearOfCreation, int strength){
         this.superHeroName = superHeroName;
