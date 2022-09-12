@@ -29,11 +29,13 @@ public class Main {
         System.out.println("Write the superhero's real name");
         realName = scanner.next();
         System.out.println("Is the Superhero human? true or false");
-        isHuman = scanner.hasNext();
+        isHuman = scanner.nextBoolean();
         System.out.println("What year whas the hero first written about?");
         yearOfCreation = scanner.nextInt();
         System.out.println("how much force in Newton can the superhero do?");
         Strength = scanner.nextInt();
+
+
 
     }
 
