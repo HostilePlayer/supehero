@@ -1,26 +1,23 @@
 package dk.kea;
+import java.util.ArrayList;
 
-public class Database {
     //private SuperHeroList superHero = new setSuperHero();
 
+    public class Database {
+        static ArrayList<SuperHeroList> getSuperHero;
 
-    public static SuperHeroList setSuperHero(String superHeroNavn, String realNavn, boolean isHuman, int yearOfCreation, int strength) {
-        SuperHeroList superHero1 = new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
-                SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength());
+        public Database(ArrayList<SuperHeroList> superhelte){
+            this.getSuperHero = superhelte;
+        }
 
-        SuperHeroList superHero2 = new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
-                SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength());
+        public static ArrayList<SuperHeroList> getSuperHero() {
+            return getSuperHero;
+        }
 
-        SuperHeroList superHero3 = new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
-                SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength());
+        public void getSuperHero(ArrayList<SuperHeroList> getSuperHero) {
+            this.getSuperHero = getSuperHero;
+        }
 
-        SuperHeroList superHero4 = new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
-                SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength());
 
-        SuperHeroList superHero5 = new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
-                SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength());
-
-        //jeg vil have den til at return superhero[0-4]
-        return superHero1;
     }
-}
+
