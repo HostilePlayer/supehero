@@ -74,17 +74,22 @@ public class Main {
         Main Program = new Main();
 
         System.out.println("list of superhero's");
+        System.out.println(superHero); //prints [], virker ikke i for loop
+        System.out.println(database.getSuperHero()); //prints [], virker ikke i for loop
+
+
 
         for(SuperHeroList hero : database.getSuperHero()){
             System.out.println(" ");
             System.out.println(hero);
-            System.out.println(superHero);
+            System.out.println("----------");
+
+            //prints den info jeg vil have men kun den nyeste input, virker ikke i for loop
             System.out.println("SuperHero name: "+SuperHeroList.getSuperHeroName());
             System.out.println("SuperHero Real name: "+SuperHeroList.getRealName());
             System.out.println("is it Human: "+SuperHeroList.getIsHuman());
             System.out.println("first publish: "+SuperHeroList.getYearOfCreation());
             System.out.println("first publish: "+SuperHeroList.getStrength());
-            System.out.println("----------");
         }
 
 

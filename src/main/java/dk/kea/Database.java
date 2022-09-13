@@ -6,7 +6,7 @@ import java.util.ArrayList;
     public class Database {
         //public static ArrayList<SuperHeroList> getSuperHero;
         private ArrayList<SuperHeroList> superheroes = new ArrayList<>();
-        private SuperHeroList[] superHero = new SuperHeroList[5];
+        private SuperHeroList[] superHero = new SuperHeroList[0];
         private int index = 0;
 
         public void makeSuperHero(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength) {
