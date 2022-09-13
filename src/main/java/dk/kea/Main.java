@@ -59,7 +59,7 @@ public class Main {
                     " | strength in newton: " + strength + " newtons");
 
             database.makeSuperHero(superHeroName, realName, isHuman, yearOfCreation, strength);
-            SuperHeroList hero1 = new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength);
+            //SuperHeroList hero1 = new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength);
 
             //men hvilken plads ligger jeg den?
             System.out.println("The superhero " + superHeroName + " added");
@@ -79,17 +79,18 @@ public class Main {
 
 
 
-        for(SuperHeroList hero : database.getSuperHero()){
+        for(SuperHeroList newHero : database.getSuperHero()){
             System.out.println(" ");
-            System.out.println(hero);
+            //System.out.println(newHero); // returns dk.kea.SuperHeroList@5197848c
             System.out.println("----------");
 
-            //prints den info jeg vil have men kun den nyeste input, virker ikke i for loop
+            //prints den info jeg vil have men kun den nyeste input
             System.out.println("SuperHero name: "+SuperHeroList.getSuperHeroName());
             System.out.println("SuperHero Real name: "+SuperHeroList.getRealName());
             System.out.println("is it Human: "+SuperHeroList.getIsHuman());
             System.out.println("first publish: "+SuperHeroList.getYearOfCreation());
             System.out.println("first publish: "+SuperHeroList.getStrength());
+            System.out.println("----------");
         }
 
         brugerValg();
