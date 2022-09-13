@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
         public Database(ArrayList<SuperHeroList> superHero){
             this.getSuperHero = superHero;
-            superHero.add(0, new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
+            superHero.add(new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
                     SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength()));
         }
 
