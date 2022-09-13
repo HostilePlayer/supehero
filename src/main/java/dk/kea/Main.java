@@ -34,9 +34,7 @@ public class Main {
     }
 
     public void addHero(){
-        //Database.setSuperHero();
-        //SuperHeroList.SuperHeroList();
-        do {
+
             System.out.println("Write a the superhero's name");
             String superHeroNavn = scanner.next();
             System.out.println("Write the superhero's real name");
@@ -60,10 +58,7 @@ public class Main {
 
             System.out.println(Database.getSuperHero().size());
 
-        }while (Database.getSuperHero().size() <= 5);
-        if (Database.getSuperHero().size() == 5){
-            System.out.println("Databasen er fyldt!");
-        }
+
         Main Program = new Main();
         Program.brugerValg();
     }
