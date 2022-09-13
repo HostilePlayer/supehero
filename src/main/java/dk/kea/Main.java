@@ -92,8 +92,6 @@ public class Main {
             System.out.println("first publish: "+SuperHeroList.getStrength());
         }
 
-
-
         brugerValg();
     }
 }

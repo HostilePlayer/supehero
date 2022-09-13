@@ -15,7 +15,6 @@ import java.util.ArrayList;
             superHero[index] = hero;
             index++;
 
-            ArrayList<String> superheroes = new ArrayList<>();
 
         }
 
