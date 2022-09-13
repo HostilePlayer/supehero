@@ -59,7 +59,7 @@ public class Main {
                     " | strength in newton: " + strength + " newtons");
 
             database.makeSuperHero(superHeroName, realName, isHuman, yearOfCreation, strength);
-
+            SuperHeroList hero1 = new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength);
 
             //men hvilken plads ligger jeg den?
             System.out.println("The superhero " + superHeroName + " added");
@@ -78,8 +78,11 @@ public class Main {
         for(SuperHeroList hero : database.getSuperHero()){
             System.out.println(" ");
             System.out.println(hero);
+            System.out.println(superHero);
             System.out.println("----------");
         }
+
+
 
         brugerValg();
     }

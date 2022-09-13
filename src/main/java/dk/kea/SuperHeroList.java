@@ -41,9 +41,10 @@ public class SuperHeroList {
     }
 
     public String toString(){
-        return "Superhero name: "+superHeroName+"\nrealName: "+realName+"\nisHuman: "+isHuman+
-                "\nyearOfCreation: "+yearOfCreation+"\ngetStrength: "+strength;
+        return "superHeroName: "+superHeroName+"\nrealName: "+realName+"\nisHuman: "+isHuman+"\nyearOfCreation: "+yearOfCreation+
+                "\nstrength: "+strength;
     }
+
 }
 
 
