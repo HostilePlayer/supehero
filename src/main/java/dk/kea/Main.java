@@ -79,6 +79,11 @@ public class Main {
             System.out.println(" ");
             System.out.println(hero);
             System.out.println(superHero);
+            System.out.println("SuperHero name: "+SuperHeroList.getSuperHeroName());
+            System.out.println("SuperHero Real name: "+SuperHeroList.getRealName());
+            System.out.println("is it Human: "+SuperHeroList.getIsHuman());
+            System.out.println("first publish: "+SuperHeroList.getYearOfCreation());
+            System.out.println("first publish: "+SuperHeroList.getStrength());
             System.out.println("----------");
         }
 
