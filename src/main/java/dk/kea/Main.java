@@ -8,8 +8,8 @@ public class Main {
     Scanner scanner = new Scanner(System.in);
     int brugerInput;
 
-    ArrayList<SuperHeroList > superhelte = new ArrayList<>();
-    Database database = new Database(superhelte);
+    ArrayList<SuperHeroList > superHero = new ArrayList<>();
+    Database database = new Database(superHero);
 
     public static void main(String[] args) {
         Main Program = new Main();
@@ -31,6 +31,10 @@ public class Main {
             Program.addHero();
         }
 
+        if(brugerInput == 2){
+            System.out.println("viser liste");
+            Program.printHero();
+        }
     }
 
     public void addHero(){
@@ -50,7 +54,7 @@ public class Main {
                     + " | Human: " + isHuman + " | first publish: " + yearOfCreation +
                     " | strength in newton: " + strength + " newtons");
 
-            SuperHeroList hero = new SuperHeroList(superHeroNavn, realNavn, isHuman,
+            SuperHeroList superHero = new SuperHeroList(superHeroNavn, realNavn, isHuman,
                     yearOfCreation, strength);
 
             //men hvilken plads ligger jeg den?
@@ -63,4 +67,13 @@ public class Main {
         Program.brugerValg();
     }
 
+    public void printHero(){
+
+        for(SuperHeroList superhero : superHero){
+
+        }
+
+        Main Program = new Main();
+        Program.brugerValg();
+    }
 }
