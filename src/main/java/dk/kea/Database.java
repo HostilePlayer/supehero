@@ -7,10 +7,14 @@ import java.util.ArrayList;
         public static ArrayList<SuperHeroList> getSuperHero;
 
         public Database(ArrayList<SuperHeroList> superHero){
-            //jeg skal enten fortælle den at den skal bruge en ny plads hvergang eller ikke have den static
+            //TODO: jeg skal enten fortælle den at den skal bruge en ny plads hvergang eller ikke have den static
             this.getSuperHero= superHero;
-            superHero.add(0, new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
-                    SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength()));
+            superHero.add(0, new SuperHeroList(
+                    SuperHeroList.getSuperHeroName(),
+                    SuperHeroList.getRealName(),
+                    SuperHeroList.getIsHuman(),
+                    SuperHeroList.getYearOfCreation(),
+                    SuperHeroList.getStrength()));
         }
 
         public static ArrayList<SuperHeroList> getSuperHero() {
