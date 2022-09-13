@@ -4,22 +4,18 @@ import java.util.ArrayList;
     //private SuperHeroList superHero = new setSuperHero();
 
     public class Database {
-        public static ArrayList<SuperHeroList> getSuperHero;
+        //public static ArrayList<SuperHeroList> getSuperHero;
+        private ArrayList<SuperHeroList> superheroes = new ArrayList<>();
+        private int index = 0;
 
-        public Database(ArrayList<SuperHeroList> superHero){
-            //TODO: jeg skal enten fortælle den at den skal bruge en ny plads hvergang eller ikke have den static
-            this.getSuperHero= superHero;
-            superHero.add(0, new SuperHeroList(
-                    SuperHeroList.getSuperHeroName(),
-                    SuperHeroList.getRealName(),
-                    SuperHeroList.getIsHuman(),
-                    SuperHeroList.getYearOfCreation(),
-                    SuperHeroList.getStrength()));
+        public void makeSuperHero(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength) {
+            SuperHeroList hero1 = new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength);
+            superheroes.add(hero1);
+
         }
 
-        public static ArrayList<SuperHeroList> getSuperHero() {
-            return getSuperHero;
+        public ArrayList<SuperHeroList> getSuperHero() {
+            return superheroes;
         }
-
     }
 

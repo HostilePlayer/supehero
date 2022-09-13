@@ -2,13 +2,14 @@ package dk.kea;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+
 public class Main {
 
     Scanner scanner = new Scanner(System.in);
     int brugerInput;
 
     ArrayList<SuperHeroList > superHero = new ArrayList<>();
-    Database database = new Database(superHero);
+    Database database = new Database();
 
     public static void main(String[] args) {
         Main Program = new Main();
@@ -33,7 +34,7 @@ public class Main {
         }
 
         if(brugerInput == 2){
-            System.out.println("viser liste");
+            System.out.println("list of superhero's");
             Program.printHero();
         }
     }
@@ -41,9 +42,9 @@ public class Main {
     public void addHero(){
 
             System.out.println("Write a the superhero's name");
-            String superHeroNavn = scanner.next();
+            String superHeroName = scanner.next();
             System.out.println("Write the superhero's real name");
-            String realNavn = scanner.next();
+            String realName = scanner.next();
             System.out.println("Is the Superhero human? write yes or no");
             String isHuman = scanner.next();
             System.out.println("What year whas the hero first written about?");
@@ -51,18 +52,17 @@ public class Main {
             System.out.println("how much force in Newton can the superhero do?");
             int strength = scanner.nextInt();
 
-            System.out.println("| Superhero: " + superHeroNavn + " | real name: " + realNavn
+            System.out.println("| Superhero: " + superHeroName + " | real name: " + realName
                     + " | Human: " + isHuman + " | first publish: " + yearOfCreation +
                     " | strength in newton: " + strength + " newtons");
 
-            SuperHeroList superHero = new SuperHeroList(superHeroNavn, realNavn, isHuman,
-                    yearOfCreation, strength);
+            database.makeSuperHero(superHeroName, realName, isHuman, yearOfCreation, strength);
 
 
             //men hvilken plads ligger jeg den?
-            System.out.println("The superhero " + superHeroNavn + " added");
+            System.out.println("The superhero " + superHeroName + " added");
 
-            System.out.println("Number of superhero's: "+Database.getSuperHero().size());
+           // System.out.println("Number of superhero's: "+Database.getSuperHero().size());
             System.out.println("----------");
 
         Main Program = new Main();
@@ -71,12 +71,9 @@ public class Main {
 
     public void printHero(){
 
-        for(SuperHeroList superhero : superHero){
-            System.out.println("SuperHero name: "+SuperHeroList.getSuperHeroName());
-            System.out.println("SuperHero Real name: "+SuperHeroList.getRealName());
-            System.out.println("is it Human: "+SuperHeroList.getIsHuman());
-            System.out.println("first publish: "+SuperHeroList.getYearOfCreation());
-            System.out.println("first publish: "+SuperHeroList.getStrength());
+        for(SuperHeroList superhero : database.getSuperHero()){
+            System.out.println(" ");
+            System.out.println(superhero);
             System.out.println("----------");
         }
 
