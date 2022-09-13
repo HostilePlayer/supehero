@@ -7,12 +7,12 @@ public class SuperHeroList {
     public ArrayList<SuperHeroList> getSuperHero;
     public static String superHeroName;
     public static String realName;
-    public static boolean isHuman;
+    public static String isHuman;
     public static int yearOfCreation;
     public static int strength;
 
 
-    public SuperHeroList(String superHeroName, String realName, boolean isHuman, int yearOfCreation, int strength){
+    public SuperHeroList(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength){
         this.superHeroName = superHeroName;
         this.realName = realName;
         this.isHuman = isHuman;
@@ -28,7 +28,7 @@ public class SuperHeroList {
         return realName;
     }
 
-    public static boolean getIsHuman() {
+    public static String getIsHuman() {
         return isHuman;
     }
 

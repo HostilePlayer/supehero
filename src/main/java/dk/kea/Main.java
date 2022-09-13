@@ -44,8 +44,8 @@ public class Main {
             String superHeroNavn = scanner.next();
             System.out.println("Write the superhero's real name");
             String realNavn = scanner.next();
-            System.out.println("Is the Superhero human? true or false");
-            boolean isHuman = scanner.nextBoolean();
+            System.out.println("Is the Superhero human? write yes or no");
+            String isHuman = scanner.next();
             System.out.println("What year whas the hero first written about?");
             int yearOfCreation = scanner.nextInt();
             System.out.println("how much force in Newton can the superhero do?");
@@ -57,6 +57,7 @@ public class Main {
 
             SuperHeroList superHero = new SuperHeroList(superHeroNavn, realNavn, isHuman,
                     yearOfCreation, strength);
+
 
             //men hvilken plads ligger jeg den?
             System.out.println("The superhero " + superHeroNavn + " added");
