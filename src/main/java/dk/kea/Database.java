@@ -4,11 +4,12 @@ import java.util.ArrayList;
     //private SuperHeroList superHero = new setSuperHero();
 
     public class Database {
-        static ArrayList<SuperHeroList> getSuperHero;
+        public static ArrayList<SuperHeroList> getSuperHero;
 
         public Database(ArrayList<SuperHeroList> superHero){
-            this.getSuperHero = superHero;
-            superHero.add(new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
+            //jeg skal enten fortælle den at den skal bruge en ny plads hvergang eller ikke have den static
+            this.getSuperHero= superHero;
+            superHero.add( new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
                     SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength()));
         }
 

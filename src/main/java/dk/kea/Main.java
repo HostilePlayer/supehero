@@ -1,5 +1,4 @@
 package dk.kea;
-import javax.xml.crypto.Data;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -73,10 +72,10 @@ public class Main {
 
         for(SuperHeroList superhero : superHero){
             System.out.println("SuperHero name: "+SuperHeroList.getSuperHeroName());
-            System.out.println("SuperHero Real name: "+SuperHeroList.realName);
-            System.out.println("is it Human: "+SuperHeroList.isHuman);
-            System.out.println("first publish: "+SuperHeroList.yearOfCreation);
-            System.out.println("first publish: "+SuperHeroList.strength);
+            System.out.println("SuperHero Real name: "+SuperHeroList.getRealName());
+            System.out.println("is it Human: "+SuperHeroList.getIsHuman());
+            System.out.println("first publish: "+SuperHeroList.getYearOfCreation());
+            System.out.println("first publish: "+SuperHeroList.getStrength());
             System.out.println("----------");
         }
 

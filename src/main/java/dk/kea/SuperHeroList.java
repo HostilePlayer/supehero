@@ -1,8 +1,10 @@
 package dk.kea;
 
+import java.util.ArrayList;
+
 public class SuperHeroList {
 
-    private static SuperHeroList superHero;
+    public ArrayList<SuperHeroList> getSuperHero;
     public static String superHeroName;
     public static String realName;
     public static boolean isHuman;
