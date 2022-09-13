@@ -23,7 +23,9 @@ public class Main {
         Main Program = new Main();
 
         System.out.println("1. for add superhero");
+        System.out.println("2. for list of superhero's");
         System.out.println("9. quit program");
+        System.out.println("----------");
 
         brugerInput = scanner.nextInt();
         if(brugerInput == 1){
@@ -60,8 +62,8 @@ public class Main {
             //men hvilken plads ligger jeg den?
             System.out.println("The superhero " + superHeroNavn + " added");
 
-            System.out.println(Database.getSuperHero().size());
-
+            System.out.println("Number of superhero's: "+Database.getSuperHero().size());
+            System.out.println("----------");
 
         Main Program = new Main();
         Program.brugerValg();
@@ -70,7 +72,12 @@ public class Main {
     public void printHero(){
 
         for(SuperHeroList superhero : superHero){
-
+            System.out.println("SuperHero name: "+SuperHeroList.getSuperHeroName());
+            System.out.println("SuperHero Real name: "+SuperHeroList.realName);
+            System.out.println("is it Human: "+SuperHeroList.isHuman);
+            System.out.println("first publish: "+SuperHeroList.yearOfCreation);
+            System.out.println("first publish: "+SuperHeroList.strength);
+            System.out.println("----------");
         }
 
         Main Program = new Main();
