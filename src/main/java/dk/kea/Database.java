@@ -5,21 +5,22 @@ import java.util.ArrayList;
 
     public class Database {
         //public static ArrayList<SuperHeroList> getSuperHero;
-        private ArrayList<SuperHeroList> superheroes = new ArrayList<>();
-        private SuperHeroList[] superHero = new SuperHeroList[0];
+        private ArrayList<SuperHeroList> SuperHeroList = new ArrayList<>();
+        private SuperHeroList[] superHero = new SuperHeroList[5];
         private int index = 0;
 
         public void makeSuperHero(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength) {
-            SuperHeroList hero = new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength);
+            SuperHeroList newHero = new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength);
+            SuperHeroList.add(newHero);
 
-            superHero[index] = hero;
+            superHero[index] = newHero;
             index++;
 
 
         }
 
         public ArrayList<SuperHeroList> getSuperHero() {
-            return superheroes;
+            return SuperHeroList;
         }
 
 

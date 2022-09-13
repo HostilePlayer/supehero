@@ -74,8 +74,8 @@ public class Main {
         Main Program = new Main();
 
         System.out.println("list of superhero's");
-        System.out.println(superHero); //prints [], virker ikke i for loop
-        System.out.println(database.getSuperHero()); //prints [], virker ikke i for loop
+        //System.out.println(superHero); //prints [], virker ikke i for loop
+        //System.out.println(database.getSuperHero()); //prints [], virker ikke i for loop
 
 
 
