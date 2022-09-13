@@ -6,8 +6,10 @@ import java.util.ArrayList;
     public class Database {
         static ArrayList<SuperHeroList> getSuperHero;
 
-        public Database(ArrayList<SuperHeroList> superhelte){
-            this.getSuperHero = superhelte;
+        public Database(ArrayList<SuperHeroList> superHero){
+            this.getSuperHero = superHero;
+            getSuperHero.add(0, new SuperHeroList(SuperHeroList.getSuperHeroName(), SuperHeroList.getRealName(),
+                    SuperHeroList.getIsHuman(), SuperHeroList.getYearOfCreation(), SuperHeroList.getStrength()));
         }
 
         public static ArrayList<SuperHeroList> getSuperHero() {

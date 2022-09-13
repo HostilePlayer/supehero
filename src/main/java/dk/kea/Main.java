@@ -1,4 +1,5 @@
 package dk.kea;
+import javax.xml.crypto.Data;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -53,8 +54,12 @@ public class Main {
 
             SuperHeroList hero = new SuperHeroList(superHeroNavn, realNavn, isHuman,
                     yearOfCreation, strength);
+
             //men hvilken plads ligger jeg den?
             System.out.println("The superhero " + superHeroNavn + " added");
+
+            System.out.println(Database.getSuperHero().size());
+
         }while (Database.getSuperHero().size() <= 5);
         if (Database.getSuperHero().size() == 5){
             System.out.println("Databasen er fyldt!");
