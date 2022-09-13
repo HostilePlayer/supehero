@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class Main {
 
     Scanner scanner = new Scanner(System.in);
-    int brugerInput;
 
     ArrayList<SuperHeroList > superHero = new ArrayList<>();
     Database database = new Database();
@@ -27,19 +26,22 @@ public class Main {
         System.out.println("9. quit program");
         System.out.println("----------");
 
-        brugerInput = scanner.nextInt();
-        if(brugerInput == 1){
-            System.out.println("adding superhero");
-            Program.addHero();
-        }
+        int brugerInput = scanner.nextInt();
 
-        if(brugerInput == 2){
-            System.out.println("list of superhero's");
-            Program.printHero();
+
+
+        if(brugerInput == 1){
+
+            addHero();
+        }else if(brugerInput == 2){
+
+            printHero();
         }
     }
 
     public void addHero(){
+            Main Program = new Main();
+        System.out.println("adding superhero");
 
             System.out.println("Write a the superhero's name");
             String superHeroName = scanner.next();
@@ -65,19 +67,20 @@ public class Main {
            // System.out.println("Number of superhero's: "+Database.getSuperHero().size());
             System.out.println("----------");
 
-        Main Program = new Main();
-        Program.brugerValg();
+            brugerValg();
     }
 
     public void printHero(){
+        Main Program = new Main();
 
-        for(SuperHeroList superhero : database.getSuperHero()){
+        System.out.println("list of superhero's");
+
+        for(SuperHeroList hero : database.getSuperHero()){
             System.out.println(" ");
-            System.out.println(superhero);
+            System.out.println(hero);
             System.out.println("----------");
         }
 
-        Main Program = new Main();
-        Program.brugerValg();
+        brugerValg();
     }
 }
