@@ -19,8 +19,6 @@ import java.util.ArrayList;
                 String name = superhero.getSuperHeroName().toLowerCase();
                 if (name.contains(searchTerm.toLowerCase())) {
                     return superhero;
-                } else {
-                    System.out.println("intet resultat fundet");
                 }
                 return null;
             }
