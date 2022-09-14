@@ -6,41 +6,40 @@ import java.util.ArrayList;
 public class Main {
 
     Scanner scanner = new Scanner(System.in);
-
-    ArrayList<SuperHeroList > superHero = new ArrayList<>();
-    Database database = new Database();
+    private Database database;
 
     public static void main(String[] args) {
+
         Main Program = new Main();
-
-        System.out.println("Whelcome to the Superhero Database!");
-
+        Program.database = new Database();
         Program.brugerValg();
+
     }
 
     public void brugerValg() {
-        Main Program = new Main();
 
-        System.out.println("1. for add superhero");
-        System.out.println("2. for list of superhero's");
-        System.out.println("9. quit program");
-        System.out.println("----------");
+        System.out.println("Whelcome to the Superhero Database!");
+
 
         int brugerInput = scanner.nextInt();
 
+        while (brugerInput != 9){
+            System.out.println("1. for add superhero");
+            System.out.println("2. for list of superhero's");
+            System.out.println("9. quit program");
+            System.out.println("----------");
+            if(brugerInput == 1){
+                addHero();
+            } else if (brugerInput == 2){
+                printHero();
+            }
 
 
-        if(brugerInput == 1){
 
-            addHero();
-        }else if(brugerInput == 2){
-
-            printHero();
         }
     }
 
     public void addHero(){
-            Main Program = new Main();
         System.out.println("adding superhero");
 
             System.out.println("Write a the superhero's name");
@@ -67,23 +66,23 @@ public class Main {
            // System.out.println("Number of superhero's: "+Database.getSuperHero().size());
             System.out.println("----------");
 
-            brugerValg();
+
     }
 
     public void printHero(){
-        Main Program = new Main();
 
         System.out.println("list of superhero's");
         //System.out.println(superHero); //prints [], virker ikke i for loop
         //System.out.println(database.getSuperHero()); //prints [], virker ikke i for loop
-
-
 
         for(SuperHeroList newHero : database.getSuperHero()){
             System.out.println(" ");
             //System.out.println(newHero); // returns dk.kea.SuperHeroList@5197848c
             System.out.println("----------");
 
+            System.out.println(database.getSuperHero());
+
+            /*
             //prints den info jeg vil have men kun den nyeste input
             System.out.println("SuperHero name: "+SuperHeroList.getSuperHeroName());
             System.out.println("SuperHero Real name: "+SuperHeroList.getRealName());
@@ -91,8 +90,9 @@ public class Main {
             System.out.println("first publish: "+SuperHeroList.getYearOfCreation());
             System.out.println("first publish: "+SuperHeroList.getStrength());
             System.out.println("----------");
+            */
         }
 
-        brugerValg();
+
     }
 }
