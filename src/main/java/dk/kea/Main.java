@@ -46,7 +46,7 @@ public class Main {
         System.out.println("Enter name: ");
         String searchTerm = scanner.next();
         database.searchFor(searchTerm);
-        SuperHeroList SuperheroList = database.searchFor(searchTerm);
+        SuperHeroList superHero = database.searchFor(searchTerm);
 
         if (database.superheroes == null) {
             System.out.println("superhelt ikke fundet");
@@ -102,7 +102,7 @@ public class Main {
             System.out.println("SuperHero Real name: "+SuperHeroList.getRealName());
             System.out.println("is it Human: "+SuperHeroList.getIsHuman());
             System.out.println("first publish: "+SuperHeroList.getYearOfCreation());
-            System.out.println("superhero force: "+SuperHeroList.getStrength()+"newstons");
+            System.out.println("superhero force: "+SuperHeroList.getStrength()+" newstons");
             System.out.println("----------");
 
         }
