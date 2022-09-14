@@ -2,13 +2,12 @@ package dk.kea;
 import java.util.ArrayList;
 
     public class Database {
-        //public static ArrayList<SuperHeroList> getSuperHero;
         public ArrayList<SuperHeroList> superheroes  = new ArrayList<>();
 
         public void makeSuperHero(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength) {
             SuperHeroList newSuperHero = new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength);
             superheroes.add(newSuperHero);
-            //newHero.add(new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength));
+
         }
 
         public ArrayList<SuperHeroList> getSuperHero() {
