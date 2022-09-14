@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
         public SuperHeroList searchFor(String searchTerm) {
             for (SuperHeroList superhero : superheroes) {
-                String name = superhero.getSuperHeroName().toLowerCase();
+                String name = SuperHeroList.getSuperHeroName().toLowerCase();
                 if (name.contains(searchTerm.toLowerCase())) {
                     return superhero;
                 }

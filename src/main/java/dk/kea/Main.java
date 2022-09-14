@@ -51,10 +51,10 @@ public class Main {
         if (superHero == null) {
             System.out.println("Superhero not in Database");
         } else if(superHero != null) {
-            System.out.println("SuperHero Real name: "+superHero.getRealName());
-            System.out.println("is it Human: "+superHero.getIsHuman());
-            System.out.println("first publish: "+superHero.getYearOfCreation());
-            System.out.println("superhero force: "+superHero.getStrength()+"newstons");
+            System.out.println("SuperHero Real name: "+ SuperHeroList.getRealName());
+            System.out.println("is it Human: "+ SuperHeroList.getIsHuman());
+            System.out.println("first publish: "+ SuperHeroList.getYearOfCreation());
+            System.out.println("superhero force: "+ SuperHeroList.getStrength()+"newstons");
             System.out.println("----------");
         }
     }
@@ -98,11 +98,11 @@ public class Main {
             //System.out.println(superheroes); printer dk.kea.SuperHeroList@ + 8 tegn
 
             //prints den info jeg vil have men kun den nyeste input
-            System.out.println("SuperHero name: "+superheroes.getSuperHeroName());
-            System.out.println("SuperHero Real name: "+superheroes.getRealName());
-            System.out.println("is it Human: "+superheroes.getIsHuman());
-            System.out.println("first publish: "+superheroes.getYearOfCreation());
-            System.out.println("superhero force: "+superheroes.getStrength()+" newstons");
+            System.out.println("SuperHero name: "+ SuperHeroList.getSuperHeroName());
+            System.out.println("SuperHero Real name: "+ SuperHeroList.getRealName());
+            System.out.println("is it Human: "+ SuperHeroList.getIsHuman());
+            System.out.println("first publish: "+ SuperHeroList.getYearOfCreation());
+            System.out.println("superhero force: "+ SuperHeroList.getStrength()+" newstons");
             System.out.println("----------");
 
         }
