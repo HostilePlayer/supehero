@@ -15,10 +15,10 @@ import java.util.ArrayList;
         }
 
         public SuperHeroList searchFor(String searchTerm) {
-            for (SuperHeroList superhero : superheroes) {
+            for (SuperHeroList superHero : superheroes) {
                 String name = SuperHeroList.getSuperHeroName().toLowerCase();
                 if (name.contains(searchTerm.toLowerCase())) {
-                    return superhero;
+                    return superHero;
                 }
                 return null;
             }
