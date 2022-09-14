@@ -21,22 +21,33 @@ public class Main {
         System.out.println("Whelcome to the Superhero Database!");
 
 
-        int brugerInput = scanner.nextInt();
+        int brugerInput = 0;
 
         while (brugerInput != 9){
             System.out.println("1. for add superhero");
             System.out.println("2. for list of superhero's");
+            System.out.println("3. to search in list");
             System.out.println("9. quit program");
             System.out.println("----------");
+            brugerInput = scanner.nextInt();
+
             if(brugerInput == 1){
                 addHero();
             } else if (brugerInput == 2){
                 printHero();
+            } else if (brugerInput == 3) {
+                searchHero();
             }
 
 
-
         }
+    }
+
+    private void searchHero() {
+        System.out.println("Enter name: ");
+        String searchTerm = scanner.nextLine();
+        database.searchFor(searchTerm);
+        SuperHeroList superheroList = database.searchFor(searchTerm);
     }
 
     public void addHero(){
@@ -77,20 +88,18 @@ public class Main {
 
         for(SuperHeroList newHero : database.getSuperHero()){
             System.out.println(" ");
-            //System.out.println(newHero); // returns dk.kea.SuperHeroList@5197848c
             System.out.println("----------");
-
             System.out.println(database.getSuperHero());
 
-            /*
+
             //prints den info jeg vil have men kun den nyeste input
             System.out.println("SuperHero name: "+SuperHeroList.getSuperHeroName());
             System.out.println("SuperHero Real name: "+SuperHeroList.getRealName());
             System.out.println("is it Human: "+SuperHeroList.getIsHuman());
             System.out.println("first publish: "+SuperHeroList.getYearOfCreation());
-            System.out.println("first publish: "+SuperHeroList.getStrength());
+            System.out.println("superhero force: "+SuperHeroList.getStrength()+"newstons");
             System.out.println("----------");
-            */
+
         }
 
 

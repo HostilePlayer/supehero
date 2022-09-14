@@ -3,18 +3,31 @@ import java.util.ArrayList;
 
     public class Database {
         //public static ArrayList<SuperHeroList> getSuperHero;
-        ArrayList<SuperHeroList> newHero = new ArrayList<>();
+        public ArrayList<SuperHeroList> superheroes  = new ArrayList<>();
 
         public void makeSuperHero(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength) {
-            SuperHeroList newHero = new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength);
-            //SuperHeroList.add(newHero);
+            SuperHeroList newSuperHero = new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength);
+            superheroes.add(newSuperHero);
             //newHero.add(new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength));
         }
 
         public ArrayList<SuperHeroList> getSuperHero() {
-            return newHero;
+            return superheroes;
         }
 
+        public SuperHeroList searchFor(String searchTerm) {
+            for (SuperHeroList superhero : superheroes) {
+                String name = superhero.getSuperHeroName().toLowerCase();
+                if (name.contains(searchTerm.toLowerCase())) {
+                    return superhero;
+                } else {
+                    System.out.println("intet resultat fundet");
+                }
+                return null;
+            }
+
+            return null;
+        }
 
     }
 
