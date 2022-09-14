@@ -51,6 +51,7 @@ public class Main {
         if (superHero == null) {
             System.out.println("Superhero not in Database");
         } else if(superHero != null) {
+            //kan kun finde den nyeste
             System.out.println("SuperHero Real name: "+ superHero.getRealName());
             System.out.println("is it Human: "+ superHero.getIsHuman());
             System.out.println("first publish: "+ superHero.getYearOfCreation());
@@ -94,8 +95,10 @@ public class Main {
         for(SuperHeroList superheroes : database.getSuperHero()){
             System.out.println(" ");
             System.out.println("----------");
-            System.out.println(database.getSuperHero()); //printer dk.kea.SuperHeroList@ + 8, tegn per helt
-            System.out.println(superheroes); //printer dk.kea.SuperHeroList@ + 8 tegn
+            //printer dk.kea.SuperHeroList@ + 8, tegn per helt, ram adresse?
+            System.out.println(database.getSuperHero());
+            //printer dk.kea.SuperHeroList@ + 8 tegn
+            System.out.println(superheroes);
 
             //prints den info jeg vil have men kun den nyeste input
             System.out.println("SuperHero name: "+ superheroes.getSuperHeroName());
