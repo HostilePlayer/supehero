@@ -21,11 +21,26 @@ public class SuperHeroList {
         return superHeroName;
     }
 
+    public void setSuperHeroName(String superHeroName)
+    {
+        this.superHeroName = superHeroName;
+    }
+
     public String getRealName() {
         return realName;
     }
 
+    public void setRealName(String RealName)
+    {
+        this.realName = realName;
+    }
+
     public String getIsHuman() {
+        return isHuman;
+    }
+
+    public String setIsHuman(String isHuman) {
+        this.isHuman = isHuman;
         return isHuman;
     }
 
@@ -33,7 +48,17 @@ public class SuperHeroList {
         return yearOfCreation;
     }
 
+    public int setYearOfCreation(int yearOfCreation) {
+        this.yearOfCreation = yearOfCreation;
+        return yearOfCreation;
+    }
+
     public int getStrength() {
+        return strength;
+    }
+
+    public int setStrength(int strength) {
+        this.strength = strength;
         return strength;
     }
 

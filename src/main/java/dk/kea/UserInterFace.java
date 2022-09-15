@@ -29,6 +29,7 @@ public class UserInterFace {
             System.out.println("1. for add superhero");
             System.out.println("2. for list of superhero's");
             System.out.println("3. to search in list");
+            System.out.println("4. to edit Superhero");
             System.out.println("9. quit program");
             System.out.println("----------");
             userInput = scanner.nextInt();
@@ -39,10 +40,17 @@ public class UserInterFace {
                 database.printHero();
             } else if (userInput == 3) {
                 searchHero();
+            } else if (userInput == 4){
+                editHero();
             }
 
 
         }
+    }
+
+    private void editHero(){
+        System.out.println("give the supehero name to start edit");
+        String searchResults = scanner.next();
     }
 
     private void searchHero() {
@@ -63,6 +71,7 @@ public class UserInterFace {
                     System.out.println("Superhero not in Database");
                 } else if (superHero != null) {
                     for(SuperHeroList superHeros : database.superheroes) {
+                        System.out.println("Superhero name: " + superHero.getSuperHeroName());
                         System.out.println("SuperHero Real name: " + superHero.getRealName());
                         System.out.println("is it Human: " + superHero.getIsHuman());
                         System.out.println("first publish: " + superHero.getYearOfCreation());
@@ -79,7 +88,7 @@ public class UserInterFace {
                 if (superHero == null) {
                     System.out.println("Superhero not in Database");
                 } else if (superHero != null) {
-                    //kan kun finde den nyeste
+                    System.out.println("Superhero name: " + superHero.getSuperHeroName());
                     System.out.println("SuperHero Real name: " + superHero.getRealName());
                     System.out.println("is it Human: " + superHero.getIsHuman());
                     System.out.println("first publish: " + superHero.getYearOfCreation());
