@@ -62,11 +62,13 @@ public class UserInterFace {
                 if (superHero == null) {
                     System.out.println("Superhero not in Database");
                 } else if (superHero != null) {
-                    System.out.println("SuperHero Real name: " + superHero.getRealName());
-                    System.out.println("is it Human: " + superHero.getIsHuman());
-                    System.out.println("first publish: " + superHero.getYearOfCreation());
-                    System.out.println("superhero force: " + superHero.getStrength() + "newstons");
-                    System.out.println("----------");
+                    for(SuperHeroList superHeros : database.superheroes) {
+                        System.out.println("SuperHero Real name: " + superHero.getRealName());
+                        System.out.println("is it Human: " + superHero.getIsHuman());
+                        System.out.println("first publish: " + superHero.getYearOfCreation());
+                        System.out.println("superhero force: " + superHero.getStrength() + "newstons");
+                        System.out.println("----------");
+                    }
                 }
             } else if (searchOption == 2) {
                 System.out.println("Enter birth name: ");
@@ -107,8 +109,6 @@ public class UserInterFace {
                 + " | Human: " + isHuman + " | first publish: " + yearOfCreation +
                 " | strength in newton: " + strength + " newtons");
 
-
-        //tilføger superHero, data kan finde godkende den
         database.makeSuperHero(superHeroName, realName, isHuman, yearOfCreation, strength);
 
         System.out.println("The superhero " + superHeroName + " added");
