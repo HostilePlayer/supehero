@@ -21,7 +21,8 @@ import java.util.ArrayList;
 
         public SuperHeroList searchFor(String searchTerm) {
             for (SuperHeroList superHero : superheroes) {
-                String name = SuperHeroList.getSuperHeroName().toLowerCase();
+                //tidliger object ikke i database
+                String name = superHero.getSuperHeroName().toLowerCase();
                 if (name.contains(searchTerm.toLowerCase())) {
                     return superHero;
                 }
