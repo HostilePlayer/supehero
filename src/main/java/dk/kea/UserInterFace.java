@@ -13,8 +13,8 @@ public class UserInterFace {
     }
 
     public void startup() {
-        database.makeSuperHero("Superman", "Clark Kent", "no", 1963, 25874);
-        database.makeSuperHero("Batman", "Bruce Wayne", "yes", 1964, 25873);
+        database.makeSuperHero("superman", "clark kent", "no", 1963, 25874);
+        database.makeSuperHero("batman", "bruce wayne", "yes", 1964, 25873);
         brugerValg();
     }
 
@@ -81,7 +81,7 @@ public class UserInterFace {
                     System.out.println("SuperHero Real name: " + superHero.getRealName());
                     System.out.println("is it Human: " + superHero.getIsHuman());
                     System.out.println("first publish: " + superHero.getYearOfCreation());
-                    System.out.println("superhero force: " + superHero.getStrength() + "newstons");
+                    System.out.println("superhero force: " + superHero.getStrength() + " newtons");
                     System.out.println("----------");
 
             }

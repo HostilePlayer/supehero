@@ -5,14 +5,12 @@ import java.util.ArrayList;
 public class Database {
     public ArrayList<SuperHeroList> superheroes = new ArrayList<>();
 
-    //TODO find fejl der overwriter tidliger inputs men beholder antallet af inputs
     public void makeSuperHero(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength) {
         superheroes.add(new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength));
     }
 
     public SuperHeroList searchForHeroName(String searchTerm) {
         for (SuperHeroList superHero : superheroes) {
-            //tidliger object ikke i database
             String name = superHero.getSuperHeroName().toLowerCase();
             if (name.contains(searchTerm.toLowerCase())) {
                 return superHero;
@@ -25,8 +23,7 @@ public class Database {
 
     public SuperHeroList searchForBirthName(String searchTerm) {
         for (SuperHeroList superHero : superheroes) {
-            //tidliger object ikke i database
-            String name = superHero.getSuperHeroName().toLowerCase();
+            String name = superHero.getRealName().toLowerCase();
             if (name.contains(searchTerm.toLowerCase())) {
                 return superHero;
             }
