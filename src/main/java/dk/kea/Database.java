@@ -68,6 +68,7 @@ public class Database {
                     System.out.println(i+1 +":" + searchResult.get(i));
 
                 }
+                //TODO lav om på hvordan jeg printer brugers muligheder
                 //i debug crasher koden her java.lang.nullPointerExeption this.scanner is null
                 System.out.println("press the coresponding number:");
                 int nr = scanner.nextInt();
