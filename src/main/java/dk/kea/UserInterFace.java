@@ -4,15 +4,18 @@ import java.util.Scanner;
 
 public class UserInterFace {
 
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner;
     private Database database;
 
-    public static void startup(){
-        UserInterFace Program = new UserInterFace();
-        Program.database = new Database();
-        Program.database.makeSuperHero("Superman" , "Clark Kent", "no", 1963, 25874);
-        Program.database.makeSuperHero("Batman" , "Bruce Wayne", "yes", 1964, 25873);
-        Program.brugerValg();
+    public UserInterFace() {
+        database = new Database();
+        scanner = new Scanner(System.in);
+    }
+
+    public void startup() {
+        database.makeSuperHero("Superman", "Clark Kent", "no", 1963, 25874);
+        database.makeSuperHero("Batman", "Bruce Wayne", "yes", 1964, 25873);
+        brugerValg();
     }
 
     public void brugerValg() {
@@ -22,7 +25,7 @@ public class UserInterFace {
 
         int userInput = 0;
 
-        while (userInput != 9){
+        while (userInput != 9) {
             System.out.println("1. for add superhero");
             System.out.println("2. for list of superhero's");
             System.out.println("3. to search in list");
@@ -30,10 +33,10 @@ public class UserInterFace {
             System.out.println("----------");
             userInput = scanner.nextInt();
 
-            if(userInput == 1){
+            if (userInput == 1) {
                 addHero();
-            } else if (userInput == 2){
-                printHero();
+            } else if (userInput == 2) {
+                database.printHero();
             } else if (userInput == 3) {
                 searchHero();
             }
@@ -43,24 +46,50 @@ public class UserInterFace {
     }
 
     private void searchHero() {
-        System.out.println("Enter name: ");
-        String searchTerm = scanner.next();
-        database.searchFor(searchTerm);
-        SuperHeroList superHero = database.searchFor(searchTerm);
+        System.out.println("Do you wanna search for a Superhero's name or by birth name?");
+        System.out.println("1. for superhero name");
+        System.out.println("2. for birth name");
+        System.out.println("3. for undo");
+        int searchOption;
+        searchOption = scanner.nextInt();
+            if (searchOption == 1) {
 
-        if (superHero == null) {
-            System.out.println("Superhero not in Database");
-        } else if(superHero != null) {
-            //kan kun finde den nyeste
-            System.out.println("SuperHero Real name: "+ superHero.getRealName());
-            System.out.println("is it Human: "+ superHero.getIsHuman());
-            System.out.println("first publish: "+ superHero.getYearOfCreation());
-            System.out.println("superhero force: "+ superHero.getStrength()+"newstons");
-            System.out.println("----------");
+                System.out.println("Enter name: ");
+                String searchTerm = scanner.next();
+                database.searchForHeroName(searchTerm);
+                SuperHeroList superHero = database.searchForHeroName(searchTerm);
+
+                if (superHero == null) {
+                    System.out.println("Superhero not in Database");
+                } else if (superHero != null) {
+                    System.out.println("SuperHero Real name: " + superHero.getRealName());
+                    System.out.println("is it Human: " + superHero.getIsHuman());
+                    System.out.println("first publish: " + superHero.getYearOfCreation());
+                    System.out.println("superhero force: " + superHero.getStrength() + "newstons");
+                    System.out.println("----------");
+                }
+            } else if (searchOption == 2) {
+                System.out.println("Enter birth name: ");
+                String searchTerm = scanner.next();
+                database.searchForBirthName(searchTerm);
+                SuperHeroList superHero = database.searchForBirthName(searchTerm);
+
+                if (superHero == null) {
+                    System.out.println("Superhero not in Database");
+                } else if (superHero != null) {
+                    //kan kun finde den nyeste
+                    System.out.println("SuperHero Real name: " + superHero.getRealName());
+                    System.out.println("is it Human: " + superHero.getIsHuman());
+                    System.out.println("first publish: " + superHero.getYearOfCreation());
+                    System.out.println("superhero force: " + superHero.getStrength() + "newstons");
+                    System.out.println("----------");
+
+            }
         }
     }
 
-    public void addHero(){
+
+    public void addHero() {
         System.out.println("adding superhero");
 
         System.out.println("Write a the superhero's name");
@@ -84,35 +113,7 @@ public class UserInterFace {
 
         System.out.println("The superhero " + superHeroName + " added");
 
-        System.out.println("Number of superhero's: "+database.getSuperHero().size());
+        System.out.println("Number of superhero's: " + database.superheroes.size());
         System.out.println("----------");
-
-
-    }
-
-    public void printHero(){
-
-        System.out.println("list of superhero's");
-
-        for(SuperHeroList superheroes : database.getSuperHero()){
-            System.out.println(" ");
-            System.out.println("----------");
-/*
-            //printer dk.kea.SuperHeroList@ + 8, tegn per helt, ram adresse?
-            System.out.println(superheroes);
-            //printer dk.kea.SuperHeroList@ + 8 tegn
-            System.out.println(superheroes);
-*/
-
-            //prints den info jeg vil have men kun den nyeste input og gentage den nyeste per element i liste
-            System.out.println("SuperHero name: "+ superheroes.getSuperHeroName());
-            System.out.println("SuperHero Real name: "+ superheroes.getRealName());
-            System.out.println("is it Human: "+ superheroes.getIsHuman());
-            System.out.println("first publish: "+ superheroes.getYearOfCreation());
-            System.out.println("superhero force: "+ superheroes.getStrength()+" newstons");
-            System.out.println("----------");
-
-        }
-
     }
 }

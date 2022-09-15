@@ -2,11 +2,11 @@ package dk.kea;
 
 public class SuperHeroList {
 
-    private static String superHeroName;
-    private static String realName;
-    private static String isHuman;
-    private static int yearOfCreation;
-    private static int strength;
+    private String superHeroName;
+    private String realName;
+    private String isHuman;
+    private int yearOfCreation;
+    private int strength;
 
 
     public SuperHeroList(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength){
@@ -17,23 +17,23 @@ public class SuperHeroList {
         this.strength = strength;
     }
 
-    public static String getSuperHeroName() {
+    public String getSuperHeroName() {
         return superHeroName;
     }
 
-    public static String getRealName() {
+    public String getRealName() {
         return realName;
     }
 
-    public static String getIsHuman() {
+    public String getIsHuman() {
         return isHuman;
     }
 
-    public static int getYearOfCreation() {
+    public int getYearOfCreation() {
         return yearOfCreation;
     }
 
-    public static int getStrength() {
+    public int getStrength() {
         return strength;
     }
 
