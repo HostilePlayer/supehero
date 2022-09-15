@@ -1,15 +1,12 @@
 package dk.kea;
 
-import java.util.ArrayList;
-
 public class SuperHeroList {
 
-    public ArrayList<SuperHeroList> getSuperHero;
-    public static String superHeroName;
-    public static String realName;
-    public static String isHuman;
-    public static int yearOfCreation;
-    public static int strength;
+    private static String superHeroName;
+    private static String realName;
+    private static String isHuman;
+    private static int yearOfCreation;
+    private static int strength;
 
 
     public SuperHeroList(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength){
