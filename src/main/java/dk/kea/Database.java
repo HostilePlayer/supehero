@@ -64,9 +64,11 @@ public class Database {
             if (name.contains(superHero.getSuperHeroName().toLowerCase())) {
                 searchResult.add(superHero);
                 for (int i=0; i<searchResult.size(); i++) {
+                    //i debug virker det som om at den skaber flere pladser end forventet
                     System.out.println(i+1 +":" + searchResult.get(i));
 
                 }
+                //i debug crasher koden her java.lang.nullPointerExeption this.scanner is null
                 System.out.println("press the coresponding number:");
                 int nr = scanner.nextInt();
                 scanner.nextLine();
@@ -77,20 +79,20 @@ public class Database {
                 System.out.println("superHero Name: " + editHero.getSuperHeroName());
 
                 String newSuperHeroName = scanner.nextLine();
-                if (!newSuperHeroName.isEmpty())
+                if (!newSuperHeroName.isEmpty()) {
                     editHero.setSuperHeroName(newSuperHeroName);
                     System.out.println("superHero Name: " + editHero.getRealName());
-
+                }
                     String newRealName = scanner.nextLine();
-                if (!newRealName.isEmpty())
+                if (!newRealName.isEmpty()) {
                     editHero.setSuperHeroName(newSuperHeroName);
                     System.out.println("real Name: " + editHero.getRealName());
-
+                }
                 String newIsHuman = scanner.nextLine();
-                if (!newIsHuman.isEmpty())
+                if (!newIsHuman.isEmpty()) {
                     editHero.setIsHuman(newIsHuman);
                     System.out.println("real Name: " + editHero.getRealName());
-
+                }
                 System.out.println("year of creation: " + editHero.getYearOfCreation());
                 String newYearOfCreation = scanner.nextLine();
                 if (!newYearOfCreation.isEmpty()) {

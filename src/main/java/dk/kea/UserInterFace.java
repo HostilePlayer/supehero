@@ -51,6 +51,7 @@ public class UserInterFace {
     private void editHero(){
         System.out.println("give the supehero name to start edit");
         String searchResults = scanner.next();
+        database.changeHero(searchResults);
     }
 
     private void searchHero() {
