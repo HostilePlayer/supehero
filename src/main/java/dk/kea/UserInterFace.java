@@ -99,18 +99,26 @@ public class UserInterFace {
                 editHero.setIsHuman(newIsHuman);
             }
 
-
-            System.out.println("old year of creation: " + editHero.getYearOfCreation());
-            String newYearOfCreation = scanner.nextLine();
-            if (!newYearOfCreation.isEmpty()) {
-                editHero.setYearOfCreation(Integer.parseInt(newYearOfCreation));
+            try {
+                System.out.println("old year of creation: " + editHero.getYearOfCreation());
+                String newYearOfCreation = scanner.next();
+                if (!newYearOfCreation.isEmpty()) {
+                    editHero.setYearOfCreation(Integer.parseInt(newYearOfCreation));
+                }
+            }catch (NumberFormatException e ){
+                System.out.println("WARNING: not valid number");
             }
 
 
+
             System.out.println("old strength in Newton: " + editHero.getStrength());
-            String newStrength = scanner.nextLine();
-            if (!newStrength.isEmpty()) {
-                editHero.setStrength(Integer.parseInt(newStrength));
+            try {
+                String newStrength = scanner.next();
+                if (!newStrength.isEmpty()) {
+                    editHero.setStrength(Integer.parseInt(newStrength));
+                }
+            }catch (NumberFormatException e ){
+                System.out.println("WARNING: not valid number");
             }
 
             // Udskriv resultater - check for listen har elementer
