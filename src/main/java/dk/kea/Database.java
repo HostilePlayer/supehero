@@ -1,4 +1,5 @@
 package dk.kea;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ public class Database {
         superheroes.add(new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength));
     }
 
-    public ArrayList<SuperHeroList> searchForSuperHeroName(String searchTerm){
+    public ArrayList<SuperHeroList> searchForSuperHeroName(String searchTerm) {
 
         for (SuperHeroList superHero : superheroes) {
             String name = superHero.getSuperHeroName().toLowerCase();
@@ -29,7 +30,7 @@ public class Database {
     }
 
 
-    public ArrayList<SuperHeroList> searchForRealName(String searchTerm){
+    public ArrayList<SuperHeroList> searchForRealName(String searchTerm) {
 
         for (SuperHeroList superHero : superheroes) {
             String name = superHero.getSuperHeroName().toLowerCase();
@@ -45,25 +46,25 @@ public class Database {
         return searchResult;
     }
 
-    public void printHero(){
+    public void printHero() {
 
         System.out.println("list of superhero's");
 
-        for(SuperHeroList superheroes : superheroes){
+        for (SuperHeroList superheroes : superheroes) {
             System.out.println(" ");
             System.out.println("----------");
-            System.out.println("SuperHero name: "+ superheroes.getSuperHeroName());
-            System.out.println("SuperHero Real name: "+ superheroes.getRealName());
-            System.out.println("is it Human: "+ superheroes.getIsHuman());
-            System.out.println("first publish: "+ superheroes.getYearOfCreation());
-            System.out.println("superhero force: "+ superheroes.getStrength()+" newstons");
+            System.out.println("SuperHero name: " + superheroes.getSuperHeroName());
+            System.out.println("SuperHero Real name: " + superheroes.getRealName());
+            System.out.println("is it Human: " + superheroes.getIsHuman());
+            System.out.println("first publish: " + superheroes.getYearOfCreation());
+            System.out.println("superhero force: " + superheroes.getStrength() + " newstons");
             System.out.println("----------");
 
         }
 
     }
 
-    public ArrayList<SuperHeroList> searchAndEdit(String searchTerm){
+    public ArrayList<SuperHeroList> searchAndEdit(String searchTerm) {
 
         for (SuperHeroList superHero : superheroes) {
             String name = superHero.getSuperHeroName().toLowerCase();
@@ -72,7 +73,7 @@ public class Database {
                 searchResult.add(superHero);
                 //printer første element per element i array og nummer to per element -1 osv
                 for (int i = 0; i < searchResult.size(); i++)
-                System.out.println(i + 1 + ":" + searchResult.get(i));
+                    System.out.println(i + 1 + ":" + searchResult.get(i));
             }
         }
         return searchResult;

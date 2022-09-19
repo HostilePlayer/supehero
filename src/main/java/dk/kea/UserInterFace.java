@@ -31,24 +31,24 @@ public class UserInterFace {
         while (userInput != 9) {
             try {
                 userInput = 0;
-                    System.out.println("1. for add superhero");
-                    System.out.println("2. for list of superhero's");
-                    System.out.println("3. to search in list");
-                    System.out.println("4. to edit Superhero");
-                    System.out.println("9. quit program");
-                    System.out.println("----------");
-                    userInput = scanner.nextInt();
-                    if (userInput == 1) {
-                        addHero();
-                    } else if (userInput == 2) {
-                        database.printHero();
-                    } else if (userInput == 3) {
-                        searchHero();
-                    } else if (userInput == 4) {
-                        editHero();
-                    }
+                System.out.println("1. for add superhero");
+                System.out.println("2. for list of superhero's");
+                System.out.println("3. to search in list");
+                System.out.println("4. to edit Superhero");
+                System.out.println("9. quit program");
+                System.out.println("----------");
+                userInput = scanner.nextInt();
+                if (userInput == 1) {
+                    addHero();
+                } else if (userInput == 2) {
+                    database.printHero();
+                } else if (userInput == 3) {
+                    searchHero();
+                } else if (userInput == 4) {
+                    editHero();
+                }
 
-            } catch (InputMismatchException e ) {
+            } catch (InputMismatchException e) {
                 System.out.println("WARNING; is not a valid input");
                 scanner.nextLine();
             }
@@ -56,7 +56,7 @@ public class UserInterFace {
     }
 
 
-    private void editHero(){
+    private void editHero() {
         System.out.println("Search for a hero to start edit");
         String searchTerm = scanner.next();
 
@@ -105,10 +105,9 @@ public class UserInterFace {
                 if (!newYearOfCreation.isEmpty()) {
                     editHero.setYearOfCreation(Integer.parseInt(newYearOfCreation));
                 }
-            }catch (NumberFormatException e ){
+            } catch (NumberFormatException e) {
                 System.out.println("WARNING: not valid number");
             }
-
 
 
             System.out.println("old strength in Newton: " + editHero.getStrength());
@@ -117,7 +116,7 @@ public class UserInterFace {
                 if (!newStrength.isEmpty()) {
                     editHero.setStrength(Integer.parseInt(newStrength));
                 }
-            }catch (NumberFormatException e ){
+            } catch (NumberFormatException e) {
                 System.out.println("WARNING: not valid number");
             }
 
@@ -128,7 +127,7 @@ public class UserInterFace {
             } else {
                 System.out.println("Superhero not in Database");
             }
-        } catch (IndexOutOfBoundsException e ) {
+        } catch (IndexOutOfBoundsException e) {
             System.out.println("WARNING: input valid number");
         }
         System.out.println("End of edit");
@@ -143,36 +142,36 @@ public class UserInterFace {
         System.out.println("3. for undo");
         int searchOption;
         searchOption = scanner.nextInt();
-            if (searchOption == 1) {
+        if (searchOption == 1) {
 
-                System.out.println("search for Superhero name");
-                String searchTerm = scanner.next();
+            System.out.println("search for Superhero name");
+            String searchTerm = scanner.next();
 
-                // opret arrayliste til søgeresultater
-                ArrayList<SuperHeroList> searchResult = database.searchForSuperHeroName(searchTerm);
+            // opret arrayliste til søgeresultater
+            ArrayList<SuperHeroList> searchResult = database.searchForSuperHeroName(searchTerm);
 
-                database.searchForSuperHeroName(searchTerm);
+            database.searchForSuperHeroName(searchTerm);
 
-                System.out.println(searchResult.size());
+            System.out.println(searchResult.size());
 
-                if (searchResult == null) {
-                    System.out.println("Superhero not in Database");
-                }
-            } else if (searchOption == 2) {
-                System.out.println("search for real name");
-                String searchTerm = scanner.next();
-
-                // opret arrayliste til søgeresultater
-                ArrayList<SuperHeroList> searchResult = database.searchForRealName(searchTerm);
-
-                database.searchForRealName(searchTerm);
-
-                System.out.println(searchResult.size());
-
-                if (searchResult == null) {
-                    System.out.println("Superhero not in Database");
-                }
+            if (searchResult == null) {
+                System.out.println("Superhero not in Database");
             }
+        } else if (searchOption == 2) {
+            System.out.println("search for real name");
+            String searchTerm = scanner.next();
+
+            // opret arrayliste til søgeresultater
+            ArrayList<SuperHeroList> searchResult = database.searchForRealName(searchTerm);
+
+            database.searchForRealName(searchTerm);
+
+            System.out.println(searchResult.size());
+
+            if (searchResult == null) {
+                System.out.println("Superhero not in Database");
+            }
+        }
     }
 
 

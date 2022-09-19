@@ -9,7 +9,7 @@ public class SuperHeroList {
     private int strength;
 
 
-    public SuperHeroList(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength){
+    public SuperHeroList(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength) {
         this.superHeroName = superHeroName;
         this.realName = realName;
         this.isHuman = isHuman;
@@ -21,8 +21,7 @@ public class SuperHeroList {
         return superHeroName;
     }
 
-    public void setSuperHeroName(String superHeroName)
-    {
+    public void setSuperHeroName(String superHeroName) {
         this.superHeroName = superHeroName;
     }
 
@@ -30,8 +29,7 @@ public class SuperHeroList {
         return realName;
     }
 
-    public void setRealName(String RealName)
-    {
+    public void setRealName(String RealName) {
         this.realName = realName;
     }
 
@@ -62,9 +60,9 @@ public class SuperHeroList {
         return strength;
     }
 
-    public String toString(){
+    public String toString() {
         return ("Superheroname: " + superHeroName + "\n real name: " + realName + "\n human statues: " + isHuman +
-                "\n year of creation: " + yearOfCreation+ "\n strengt i newtons: " + strength);
+                "\n year of creation: " + yearOfCreation + "\n strengt i newtons: " + strength);
     }
 
 }
