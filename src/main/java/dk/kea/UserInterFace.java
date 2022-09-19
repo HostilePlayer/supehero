@@ -1,5 +1,6 @@
 package dk.kea;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterFace {
@@ -49,9 +50,67 @@ public class UserInterFace {
     }
 
     private void editHero(){
-        System.out.println("give the supehero name to start edit");
+        System.out.println("Search for a hero to start edit");
         String searchResults = scanner.next();
         database.changeHero(searchResults);
+
+        // opret arrayliste til søgeresultater
+        ArrayList<SuperHeroList> searchResult = new ArrayList<SuperHeroList>();
+        // find personer, hvis navn indeholder søgekriterium og gem i liste
+        for (SuperHeroList superHero : searchResult) {
+            String name = superHero.getSuperHeroName().toLowerCase();
+            if (name.contains(superHero.getSuperHeroName().toLowerCase())) {
+                searchResult.add(superHero);
+                for (int i=0; i<searchResult.size(); i++) {
+                    //i debug virker det som om at den skaber flere pladser end forventet
+                    System.out.println(i+1 +":" + searchResult.get(i));
+
+                }
+                //TODO lav om på hvordan jeg printer brugers muligheder
+                //i debug crasher koden her java.lang.nullPointerExeption this.scanner is null
+                System.out.println("press the coresponding number:");
+                int nr = scanner.nextInt();
+                scanner.nextLine();
+                SuperHeroList editHero = searchResult.get(nr+1); // index starter fra 0
+                System.out.println("EditHero: " + editHero);
+                System.out.println("Edit data and press ENTER. if you will not edit data press ENTER");
+
+                System.out.println("superHero Name: " + editHero.getSuperHeroName());
+
+                String newSuperHeroName = scanner.nextLine();
+                if (!newSuperHeroName.isEmpty()) {
+                    editHero.setSuperHeroName(newSuperHeroName);
+                    System.out.println("superHero Name: " + editHero.getRealName());
+                }
+                String newRealName = scanner.nextLine();
+                if (!newRealName.isEmpty()) {
+                    editHero.setSuperHeroName(newSuperHeroName);
+                    System.out.println("real Name: " + editHero.getRealName());
+                }
+                String newIsHuman = scanner.nextLine();
+                if (!newIsHuman.isEmpty()) {
+                    editHero.setIsHuman(newIsHuman);
+                    System.out.println("real Name: " + editHero.getRealName());
+                }
+                System.out.println("year of creation: " + editHero.getYearOfCreation());
+                String newYearOfCreation = scanner.nextLine();
+                if (!newYearOfCreation.isEmpty()) {
+                    editHero.setYearOfCreation(Integer.parseInt(newYearOfCreation));
+                }
+
+                System.out.println("strength in Newton: " + editHero.getStrength());
+                String newStrength = scanner.nextLine();
+                if (!newStrength.isEmpty()) {
+                    editHero.setStrength(Integer.parseInt(newYearOfCreation));
+                }
+            }
+        }
+        // Udskriv resultater - check for ikke tom liste
+        if (!searchResults.isEmpty())
+            for (SuperHeroList search : searchResult)
+                System.out.println(search);
+        else
+            System.out.println("Superhero not in Database");
     }
 
     private void searchHero() {
