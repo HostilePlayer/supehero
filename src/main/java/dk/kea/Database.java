@@ -3,6 +3,7 @@ package dk.kea;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+
 public class Database {
     Scanner scanner;
     public ArrayList<SuperHeroList> superheroes = new ArrayList<>();
@@ -64,14 +65,19 @@ public class Database {
             String name = superHero.getSuperHeroName().toLowerCase();
             //nu skal den finde dem der passer og add dem til searchResult
             if (name.contains(searchTerm)) {
-                searchResult.add(superHero);
-                //printer to gange og tilføger element to gange
+                if (!searchResult.contains(superHero)){
+                    //add element : men add 2 gange?
+                    searchResult.add(superHero);
+                }
+
+                //printer hvert element på sin index plads
                 for (int i = 0; i < searchResult.size(); i++)
                     System.out.println(i + 1 + ":" + searchResult.get(i));
+
             }
+
         }
         return searchResult;
     }
-
-
 }
+
