@@ -6,35 +6,43 @@ public class Database {
     Scanner scanner;
     public ArrayList<SuperHeroList> superheroes = new ArrayList<>();
 
+    ArrayList<SuperHeroList> searchResult = new ArrayList<>();
+
     public void makeSuperHero(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength) {
         superheroes.add(new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength));
     }
 
-    public SuperHeroList searchForHeroName(String searchTerm) {
+    public ArrayList<SuperHeroList> searchForSuperHeroName(String searchTerm){
 
         for (SuperHeroList superHero : superheroes) {
             String name = superHero.getSuperHeroName().toLowerCase();
-            if (name.contains(searchTerm.toLowerCase())) {
-                return superHero;
+            //nu skal den finde dem der passer og add dem til searchResult
+            if (name.contains(searchTerm)) {
+                //hvis et element matcher skal det addes
+                searchResult.add(superHero);
+                //printer første element per element i array og nummer to per element -1 osv
+                for (int i = 0; i < searchResult.size(); i++)
+                    System.out.println(i + 1 + ":" + searchResult.get(i));
             }
-            return null;
         }
-
-        return null;
+        return searchResult;
     }
 
 
-    public SuperHeroList searchForBirthName(String searchTerm) {
+    public ArrayList<SuperHeroList> searchForRealName(String searchTerm){
 
         for (SuperHeroList superHero : superheroes) {
-            String name = superHero.getRealName().toLowerCase();
-            if (name.contains(searchTerm.toLowerCase())) {
-                return superHero;
+            String name = superHero.getSuperHeroName().toLowerCase();
+            //nu skal den finde dem der passer og add dem til searchResult
+            if (name.contains(searchTerm)) {
+                //hvis et element matcher skal det addes
+                searchResult.add(superHero);
+                //printer første element per element i array og nummer to per element -1 osv
+                for (int i = 0; i < searchResult.size(); i++)
+                    System.out.println(i + 1 + ":" + searchResult.get(i));
             }
-            return null;
         }
-
-        return null;
+        return searchResult;
     }
 
     public void printHero(){
@@ -57,19 +65,15 @@ public class Database {
 
     public ArrayList<SuperHeroList> searchAndEdit(String searchTerm){
 
-        ArrayList<SuperHeroList> searchResult = new ArrayList<>();
-
         for (SuperHeroList superHero : superheroes) {
             String name = superHero.getSuperHeroName().toLowerCase();
             //nu skal den finde dem der passer og add dem til searchResult
             if (name.contains(searchTerm)) {
                 searchResult.add(superHero);
+                //printer første element per element i array og nummer to per element -1 osv
                 for (int i = 0; i < searchResult.size(); i++)
-                //i debug virker det som om at den skaber flere pladser end forventet
                 System.out.println(i + 1 + ":" + searchResult.get(i));
-
             }
-            //return superheroes;
         }
         return searchResult;
     }

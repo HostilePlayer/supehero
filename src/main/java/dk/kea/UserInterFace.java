@@ -132,6 +132,7 @@ public class UserInterFace {
             System.out.println("WARNING: input valid number");
         }
         System.out.println("End of edit");
+        searchResult.clear();
         System.out.println("----------");
     }
 
@@ -144,41 +145,34 @@ public class UserInterFace {
         searchOption = scanner.nextInt();
             if (searchOption == 1) {
 
-                System.out.println("Enter name: ");
+                System.out.println("search for Superhero name");
                 String searchTerm = scanner.next();
-                database.searchForHeroName(searchTerm);
-                SuperHeroList superHero = database.searchForHeroName(searchTerm);
 
-                if (superHero == null) {
+                // opret arrayliste til søgeresultater
+                ArrayList<SuperHeroList> searchResult = database.searchForSuperHeroName(searchTerm);
+
+                database.searchForSuperHeroName(searchTerm);
+
+                System.out.println(searchResult.size());
+
+                if (searchResult == null) {
                     System.out.println("Superhero not in Database");
-                } else if (superHero != null) {
-                    for(SuperHeroList superHeros : database.superheroes) {
-                        System.out.println("Superhero name: " + superHero.getSuperHeroName());
-                        System.out.println("SuperHero Real name: " + superHero.getRealName());
-                        System.out.println("is it Human: " + superHero.getIsHuman());
-                        System.out.println("first publish: " + superHero.getYearOfCreation());
-                        System.out.println("superhero force: " + superHero.getStrength() + "newstons");
-                        System.out.println("----------");
-                    }
                 }
             } else if (searchOption == 2) {
-                System.out.println("Enter birth name: ");
+                System.out.println("search for real name");
                 String searchTerm = scanner.next();
-                database.searchForBirthName(searchTerm);
-                SuperHeroList superHero = database.searchForBirthName(searchTerm);
 
-                if (superHero == null) {
+                // opret arrayliste til søgeresultater
+                ArrayList<SuperHeroList> searchResult = database.searchForRealName(searchTerm);
+
+                database.searchForRealName(searchTerm);
+
+                System.out.println(searchResult.size());
+
+                if (searchResult == null) {
                     System.out.println("Superhero not in Database");
-                } else if (superHero != null) {
-                    System.out.println("Superhero name: " + superHero.getSuperHeroName());
-                    System.out.println("SuperHero Real name: " + superHero.getRealName());
-                    System.out.println("is it Human: " + superHero.getIsHuman());
-                    System.out.println("first publish: " + superHero.getYearOfCreation());
-                    System.out.println("superhero force: " + superHero.getStrength() + " newtons");
-                    System.out.println("----------");
-
+                }
             }
-        }
     }
 
 
