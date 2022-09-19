@@ -21,9 +21,6 @@ public class Database {
             if (name.contains(searchTerm)) {
                 //hvis et element matcher skal det addes
                 searchResult.add(superHero);
-                //printer første element per element i array og nummer to per element -1 osv
-                for (int i = 0; i < searchResult.size(); i++)
-                    System.out.println(i + 1 + ":" + searchResult.get(i));
             }
         }
         return searchResult;
@@ -38,9 +35,6 @@ public class Database {
             if (name.contains(searchTerm)) {
                 //hvis et element matcher skal det addes
                 searchResult.add(superHero);
-                //printer første element per element i array og nummer to per element -1 osv
-                for (int i = 0; i < searchResult.size(); i++)
-                    System.out.println(i + 1 + ":" + searchResult.get(i));
             }
         }
         return searchResult;

@@ -152,11 +152,13 @@ public class UserInterFace {
 
             database.searchForSuperHeroName(searchTerm);
 
-            System.out.println(searchResult.size());
+            System.out.println(searchResult);
+            System.out.println(" ");
 
             if (searchResult == null) {
                 System.out.println("Superhero not in Database");
             }
+            searchResult.clear();
         } else if (searchOption == 2) {
             System.out.println("search for real name");
             String searchTerm = scanner.next();
@@ -166,11 +168,13 @@ public class UserInterFace {
 
             database.searchForRealName(searchTerm);
 
-            System.out.println(searchResult.size());
+            System.out.println(searchResult);
+            System.out.println(" ");
 
             if (searchResult == null) {
                 System.out.println("Superhero not in Database");
             }
+            searchResult.clear();
         }
     }
 
