@@ -16,6 +16,8 @@ public class UserInterFace {
     public void startup() {
         database.makeSuperHero("superman", "clark kent", "no", 1963, 25874);
         database.makeSuperHero("batman", "bruce wayne", "yes", 1964, 25873);
+        database.makeSuperHero("wonderwoman", "Wendy", "yes", 1964, 25873);
+        database.makeSuperHero("ironman", "tony stark", "yes", 1964, 25873);
         brugerValg();
     }
 
@@ -56,55 +58,62 @@ public class UserInterFace {
         // opret arrayliste til søgeresultater
         ArrayList<SuperHeroList> searchResult = new ArrayList<>();
         // find personer, hvis navn indeholder søgekriterium og gem i liste
-        for (SuperHeroList superHero : searchResult) {
+        for (SuperHeroList superHero : database.superheroes) {
             String name = superHero.getSuperHeroName().toLowerCase();
             //nu skal den finde dem der passer og add dem til searchResult
             if (name.contains(searchTerm)) {
                 searchResult.add(superHero);
-                for (int i=0; i<searchResult.size(); i++) {
+                for (int i = 0; i < searchResult.size(); i++) {
                     //i debug virker det som om at den skaber flere pladser end forventet
-                    System.out.println(i+1 +":" + searchResult.get(i));
-
-                }
-                //TODO lav om på hvordan jeg printer brugers muligheder
-                //i debug crasher koden her java.lang.nullPointerExeption this.scanner is null
-                System.out.println("press the coresponding number:");
-                int nr = scanner.nextInt();
-                scanner.nextLine();
-                SuperHeroList editHero = searchResult.get(nr+1); // index starter fra 0
-                System.out.println("EditHero: " + editHero);
-                System.out.println("Edit data and press ENTER. if you will not edit data press ENTER");
-
-                System.out.println("superHero Name: " + editHero.getSuperHeroName());
-
-                String newSuperHeroName = scanner.nextLine();
-                if (!newSuperHeroName.isEmpty()) {
-                    editHero.setSuperHeroName(newSuperHeroName);
-                    System.out.println("superHero Name: " + editHero.getRealName());
-                }
-                String newRealName = scanner.nextLine();
-                if (!newRealName.isEmpty()) {
-                    editHero.setSuperHeroName(newSuperHeroName);
-                    System.out.println("real Name: " + editHero.getRealName());
-                }
-                String newIsHuman = scanner.nextLine();
-                if (!newIsHuman.isEmpty()) {
-                    editHero.setIsHuman(newIsHuman);
-                    System.out.println("real Name: " + editHero.getRealName());
-                }
-                System.out.println("year of creation: " + editHero.getYearOfCreation());
-                String newYearOfCreation = scanner.nextLine();
-                if (!newYearOfCreation.isEmpty()) {
-                    editHero.setYearOfCreation(Integer.parseInt(newYearOfCreation));
-                }
-
-                System.out.println("strength in Newton: " + editHero.getStrength());
-                String newStrength = scanner.nextLine();
-                if (!newStrength.isEmpty()) {
-                    editHero.setStrength(Integer.parseInt(newYearOfCreation));
+                    System.out.println(i + 1 + ":" + searchResult.get(i));
                 }
             }
         }
+        //TODO lav om på hvordan jeg printer brugers muligheder
+        //i debug crasher koden her java.lang.nullPointerExeption this.scanner is null
+        System.out.println("press the coresponding number:");
+        int nr = scanner.nextInt();
+        scanner.nextLine();
+        SuperHeroList editHero = searchResult.get(nr+1); // index starter fra 0
+        System.out.println("EditHero: " + editHero);
+
+        System.out.println("Write new info and press enter to edit");
+        System.out.println("leave aria blank and press enter to leave as is");
+
+        System.out.println("old superHero Name: " + editHero.getSuperHeroName());
+        String newSuperHeroName = scanner.nextLine();
+        if (!newSuperHeroName.isEmpty()) {
+                    editHero.setSuperHeroName(newSuperHeroName);
+                }
+
+
+        System.out.println("old real Name: " + editHero.getRealName());
+        String newRealName = scanner.nextLine();
+        if (!newRealName.isEmpty()) {
+            editHero.setSuperHeroName(newSuperHeroName);
+        }
+
+
+        System.out.println("old is human status: " + editHero.getRealName());
+        String newIsHuman = scanner.nextLine();
+        if (!newIsHuman.isEmpty()) {
+            editHero.setIsHuman(newIsHuman);
+        }
+
+
+        System.out.println("old year of creation: " + editHero.getYearOfCreation());
+        String newYearOfCreation = scanner.nextLine();
+        if (!newYearOfCreation.isEmpty()) {
+                    editHero.setYearOfCreation(Integer.parseInt(newYearOfCreation));
+        }
+
+
+        System.out.println("old strength in Newton: " + editHero.getStrength());
+        String newStrength = scanner.nextLine();
+        if (!newStrength.isEmpty()) {
+            editHero.setStrength(Integer.parseInt(newStrength));
+        }
+
         // Udskriv resultater - check for listen har elementer
         if (!searchResult.isEmpty()) {
             for (SuperHeroList search : searchResult)

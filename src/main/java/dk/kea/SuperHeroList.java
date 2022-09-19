@@ -62,6 +62,11 @@ public class SuperHeroList {
         return strength;
     }
 
+    public String toString(){
+        return ("Superheroname: " + superHeroName + "\n real name: " + realName + "\n human statues: " + isHuman +
+                "\n year of creation: " + yearOfCreation+ "\n strengt i newtons: " + strength);
+    }
+
 }
 
 
