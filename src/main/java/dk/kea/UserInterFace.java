@@ -19,6 +19,7 @@ public class UserInterFace {
         database.makeSuperHero("batman", "bruce wayne", "yes", 1964, 25873);
         database.makeSuperHero("wonderwoman", "Wendy", "yes", 1964, 25873);
         database.makeSuperHero("ironman", "tony stark", "yes", 1964, 25873);
+        database.makeSuperHero("mars", "marshen man", "no", 1950, 25873);
         brugerValg();
     }
 
@@ -101,7 +102,7 @@ public class UserInterFace {
 
             try {
                 System.out.println("old year of creation: " + editHero.getYearOfCreation());
-                String newYearOfCreation = scanner.next();
+                String newYearOfCreation = scanner.nextLine();
                 if (!newYearOfCreation.isEmpty()) {
                     editHero.setYearOfCreation(Integer.parseInt(newYearOfCreation));
                 }
@@ -112,7 +113,7 @@ public class UserInterFace {
 
             System.out.println("old strength in Newton: " + editHero.getStrength());
             try {
-                String newStrength = scanner.next();
+                String newStrength = scanner.nextLine();
                 if (!newStrength.isEmpty()) {
                     editHero.setStrength(Integer.parseInt(newStrength));
                 }

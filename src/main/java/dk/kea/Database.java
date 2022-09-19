@@ -65,7 +65,7 @@ public class Database {
             //nu skal den finde dem der passer og add dem til searchResult
             if (name.contains(searchTerm)) {
                 searchResult.add(superHero);
-                //printer første element per element i array og nummer to per element -1 osv
+                //printer to gange og tilføger element to gange
                 for (int i = 0; i < searchResult.size(); i++)
                     System.out.println(i + 1 + ":" + searchResult.get(i));
             }
