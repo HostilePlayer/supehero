@@ -74,56 +74,60 @@ public class UserInterFace {
                 }
             }
         }
+        System.out.println(searchResult.size());
+        try {
+            System.out.println("press the coresponding number:");
+            int nr = scanner.nextInt();
+            //programmet crasher her IndexOutOfBoundsExecption
+            SuperHeroList editHero = searchResult.get(nr + 1); // index starter fra 0
+            System.out.println("EditHero: " + editHero);
 
-        System.out.println("press the coresponding number:");
-        int nr = scanner.nextInt();
-        //programmet crasher her IndexOutOfBoundsExecption
-        SuperHeroList editHero = searchResult.get(nr+1); // index starter fra 0
-        System.out.println("EditHero: " + editHero);
+            System.out.println("Write new info and press enter to edit");
+            System.out.println("leave aria blank and press enter to leave as is");
 
-        System.out.println("Write new info and press enter to edit");
-        System.out.println("leave aria blank and press enter to leave as is");
-
-        System.out.println("old superHero Name: " + editHero.getSuperHeroName());
-        String newSuperHeroName = scanner.nextLine();
-        if (!newSuperHeroName.isEmpty()) {
-                    editHero.setSuperHeroName(newSuperHeroName);
-                }
-
-
-        System.out.println("old real Name: " + editHero.getRealName());
-        String newRealName = scanner.nextLine();
-        if (!newRealName.isEmpty()) {
-            editHero.setSuperHeroName(newSuperHeroName);
-        }
+            System.out.println("old superHero Name: " + editHero.getSuperHeroName());
+            String newSuperHeroName = scanner.nextLine();
+            if (!newSuperHeroName.isEmpty()) {
+                editHero.setSuperHeroName(newSuperHeroName);
+            }
 
 
-        System.out.println("old is human status: " + editHero.getRealName());
-        String newIsHuman = scanner.nextLine();
-        if (!newIsHuman.isEmpty()) {
-            editHero.setIsHuman(newIsHuman);
-        }
+            System.out.println("old real Name: " + editHero.getRealName());
+            String newRealName = scanner.nextLine();
+            if (!newRealName.isEmpty()) {
+                editHero.setSuperHeroName(newSuperHeroName);
+            }
 
 
-        System.out.println("old year of creation: " + editHero.getYearOfCreation());
-        String newYearOfCreation = scanner.nextLine();
-        if (!newYearOfCreation.isEmpty()) {
-                    editHero.setYearOfCreation(Integer.parseInt(newYearOfCreation));
-        }
+            System.out.println("old is human status: " + editHero.getRealName());
+            String newIsHuman = scanner.nextLine();
+            if (!newIsHuman.isEmpty()) {
+                editHero.setIsHuman(newIsHuman);
+            }
 
 
-        System.out.println("old strength in Newton: " + editHero.getStrength());
-        String newStrength = scanner.nextLine();
-        if (!newStrength.isEmpty()) {
-            editHero.setStrength(Integer.parseInt(newStrength));
-        }
+            System.out.println("old year of creation: " + editHero.getYearOfCreation());
+            String newYearOfCreation = scanner.nextLine();
+            if (!newYearOfCreation.isEmpty()) {
+                editHero.setYearOfCreation(Integer.parseInt(newYearOfCreation));
+            }
 
-        // Udskriv resultater - check for listen har elementer
-        if (!searchResult.isEmpty()) {
-            for (SuperHeroList search : searchResult)
-                System.out.println(search);
-        }else{
-            System.out.println("Superhero not in Database");
+
+            System.out.println("old strength in Newton: " + editHero.getStrength());
+            String newStrength = scanner.nextLine();
+            if (!newStrength.isEmpty()) {
+                editHero.setStrength(Integer.parseInt(newStrength));
+            }
+
+            // Udskriv resultater - check for listen har elementer
+            if (!searchResult.isEmpty()) {
+                for (SuperHeroList search : searchResult)
+                    System.out.println(search);
+            } else {
+                System.out.println("Superhero not in Database");
+            }
+        } catch (IndexOutOfBoundsException e ) {
+            System.out.println("WARNING: input valid number");
         }
         System.out.println("End of edit");
         System.out.println("----------");
