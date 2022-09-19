@@ -1,6 +1,7 @@
 package dk.kea;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInterFace {
@@ -14,7 +15,7 @@ public class UserInterFace {
     }
 
     public void startup() {
-        database.makeSuperHero("superman", "clark kent", "no", 1963, 25874);
+        database.makeSuperHero("superman", "clark kent", "no", 1938, 25874);
         database.makeSuperHero("batman", "bruce wayne", "yes", 1964, 25873);
         database.makeSuperHero("wonderwoman", "Wendy", "yes", 1964, 25873);
         database.makeSuperHero("ironman", "tony stark", "yes", 1964, 25873);
@@ -23,33 +24,37 @@ public class UserInterFace {
 
     public void brugerValg() {
 
-        System.out.println("Whelcome to the Superhero Database!");
-
+        System.out.println("Welcome to the Superhero Database!");
 
         int userInput = 0;
 
         while (userInput != 9) {
-            System.out.println("1. for add superhero");
-            System.out.println("2. for list of superhero's");
-            System.out.println("3. to search in list");
-            System.out.println("4. to edit Superhero");
-            System.out.println("9. quit program");
-            System.out.println("----------");
-            userInput = scanner.nextInt();
+            try {
+                userInput = 0;
+                    System.out.println("1. for add superhero");
+                    System.out.println("2. for list of superhero's");
+                    System.out.println("3. to search in list");
+                    System.out.println("4. to edit Superhero");
+                    System.out.println("9. quit program");
+                    System.out.println("----------");
+                    userInput = scanner.nextInt();
+                    if (userInput == 1) {
+                        addHero();
+                    } else if (userInput == 2) {
+                        database.printHero();
+                    } else if (userInput == 3) {
+                        searchHero();
+                    } else if (userInput == 4) {
+                        editHero();
+                    }
 
-            if (userInput == 1) {
-                addHero();
-            } else if (userInput == 2) {
-                database.printHero();
-            } else if (userInput == 3) {
-                searchHero();
-            } else if (userInput == 4){
-                editHero();
+            } catch (InputMismatchException e ) {
+                System.out.println("WARNING; is not a valid input");
+                scanner.nextLine();
             }
-
-
         }
     }
+
 
     private void editHero(){
         System.out.println("Search for a hero to start edit");
@@ -69,11 +74,10 @@ public class UserInterFace {
                 }
             }
         }
-        //TODO lav om på hvordan jeg printer brugers muligheder
-        //i debug crasher koden her java.lang.nullPointerExeption this.scanner is null
+
         System.out.println("press the coresponding number:");
         int nr = scanner.nextInt();
-        scanner.nextLine();
+        //programmet crasher her IndexOutOfBoundsExecption
         SuperHeroList editHero = searchResult.get(nr+1); // index starter fra 0
         System.out.println("EditHero: " + editHero);
 
