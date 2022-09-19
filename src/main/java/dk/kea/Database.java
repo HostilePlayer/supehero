@@ -69,7 +69,7 @@ public class Database {
                 System.out.println(i + 1 + ":" + searchResult.get(i));
 
             }
-            return superheroes;
+            //return superheroes;
         }
         return searchResult;
     }

@@ -72,12 +72,15 @@ public class UserInterFace {
             //TODO kan ikke finde helten man vælger
             SuperHeroList editHero = searchResult.get(nr - 1); // index starter fra 0
             System.out.println("EditHero: " + editHero);
+            System.out.println(" ");
 
             System.out.println("Write new info and press enter to edit");
             System.out.println("leave aria blank and press enter to leave as is");
+            System.out.println(" ");
 
             System.out.println("old superHero Name: " + editHero.getSuperHeroName());
-            String newSuperHeroName = scanner.nextLine();
+            String newSuperHeroName = scanner.nextLine(); //den her køre ikke
+            scanner.nextLine();
             if (!newSuperHeroName.isEmpty()) {
                 editHero.setSuperHeroName(newSuperHeroName);
             }
@@ -86,11 +89,11 @@ public class UserInterFace {
             System.out.println("old real Name: " + editHero.getRealName());
             String newRealName = scanner.nextLine();
             if (!newRealName.isEmpty()) {
-                editHero.setSuperHeroName(newSuperHeroName);
+                editHero.setSuperHeroName(newRealName);
             }
 
 
-            System.out.println("old is human status: " + editHero.getRealName());
+            System.out.println("old is human status: " + editHero.getIsHuman());
             String newIsHuman = scanner.nextLine();
             if (!newIsHuman.isEmpty()) {
                 editHero.setIsHuman(newIsHuman);
