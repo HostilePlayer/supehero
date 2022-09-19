@@ -55,8 +55,4 @@ public class Database {
 
     }
 
-    public void changeHero(String searchResults){
-
-
-    }
 }

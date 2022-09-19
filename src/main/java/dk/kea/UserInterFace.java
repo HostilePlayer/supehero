@@ -51,15 +51,15 @@ public class UserInterFace {
 
     private void editHero(){
         System.out.println("Search for a hero to start edit");
-        String searchResults = scanner.next();
-        database.changeHero(searchResults);
+        String searchTerm = scanner.next();
 
         // opret arrayliste til søgeresultater
-        ArrayList<SuperHeroList> searchResult = new ArrayList<SuperHeroList>();
+        ArrayList<SuperHeroList> searchResult = new ArrayList<>();
         // find personer, hvis navn indeholder søgekriterium og gem i liste
         for (SuperHeroList superHero : searchResult) {
             String name = superHero.getSuperHeroName().toLowerCase();
-            if (name.contains(superHero.getSuperHeroName().toLowerCase())) {
+            //nu skal den finde dem der passer og add dem til searchResult
+            if (name.contains(searchTerm)) {
                 searchResult.add(superHero);
                 for (int i=0; i<searchResult.size(); i++) {
                     //i debug virker det som om at den skaber flere pladser end forventet
@@ -105,12 +105,15 @@ public class UserInterFace {
                 }
             }
         }
-        // Udskriv resultater - check for ikke tom liste
-        if (!searchResults.isEmpty())
+        // Udskriv resultater - check for listen har elementer
+        if (!searchResult.isEmpty()) {
             for (SuperHeroList search : searchResult)
                 System.out.println(search);
-        else
+        }else{
             System.out.println("Superhero not in Database");
+        }
+        System.out.println("End of edit");
+        System.out.println("----------");
     }
 
     private void searchHero() {
