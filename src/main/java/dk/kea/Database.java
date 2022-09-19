@@ -55,5 +55,24 @@ public class Database {
 
     }
 
+    public ArrayList<SuperHeroList> searchAndEdit(String searchTerm){
+
+        ArrayList<SuperHeroList> searchResult = new ArrayList<>();
+
+        for (SuperHeroList superHero : superheroes) {
+            String name = superHero.getSuperHeroName().toLowerCase();
+            //nu skal den finde dem der passer og add dem til searchResult
+            if (name.contains(searchTerm)) {
+                searchResult.add(superHero);
+                for (int i = 0; i < searchResult.size(); i++)
+                //i debug virker det som om at den skaber flere pladser end forventet
+                System.out.println(i + 1 + ":" + searchResult.get(i));
+
+            }
+            return superheroes;
+        }
+        return searchResult;
+    }
+
 
 }

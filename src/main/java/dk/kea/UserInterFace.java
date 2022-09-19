@@ -61,25 +61,16 @@ public class UserInterFace {
         String searchTerm = scanner.next();
 
         // opret arrayliste til søgeresultater
-        ArrayList<SuperHeroList> searchResult = new ArrayList<>();
-        // find personer, hvis navn indeholder søgekriterium og gem i liste
-        for (SuperHeroList superHero : database.superheroes) {
-            String name = superHero.getSuperHeroName().toLowerCase();
-            //nu skal den finde dem der passer og add dem til searchResult
-            if (name.contains(searchTerm)) {
-                searchResult.add(superHero);
-                for (int i = 0; i < searchResult.size(); i++) {
-                    //i debug virker det som om at den skaber flere pladser end forventet
-                    System.out.println(i + 1 + ":" + searchResult.get(i));
-                }
-            }
-        }
+        ArrayList<SuperHeroList> searchResult = database.searchAndEdit(searchTerm);
+
+        database.searchAndEdit(searchTerm);
+
         System.out.println(searchResult.size());
         try {
             System.out.println("press the coresponding number:");
             int nr = scanner.nextInt();
-            //programmet crasher her IndexOutOfBoundsExecption
-            SuperHeroList editHero = searchResult.get(nr + 1); // index starter fra 0
+            //TODO kan ikke finde helten man vælger
+            SuperHeroList editHero = searchResult.get(nr - 1); // index starter fra 0
             System.out.println("EditHero: " + editHero);
 
             System.out.println("Write new info and press enter to edit");
