@@ -21,7 +21,10 @@ public class Database {
             //nu skal den finde dem der passer og add dem til searchResult
             if (name.contains(searchTerm)) {
                 //hvis et element matcher skal det addes
-                searchResult.add(superHero);
+                if (!searchResult.contains(superHero)) {
+                    //add element : men add 2 gange?
+                    searchResult.add(superHero);
+                }
             }
         }
         return searchResult;
@@ -35,7 +38,10 @@ public class Database {
             //nu skal den finde dem der passer og add dem til searchResult
             if (name.contains(searchTerm)) {
                 //hvis et element matcher skal det addes
-                searchResult.add(superHero);
+                if (!searchResult.contains(superHero)) {
+                    //add element : men add 2 gange?
+                    searchResult.add(superHero);
+                }
             }
         }
         return searchResult;
