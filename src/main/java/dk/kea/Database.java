@@ -67,7 +67,7 @@ public class Database {
             if (name.contains(searchTerm)) {
 
                 //sådan stopper jeg den i at lave flere af den samme element
-                if (!searchResult.contains(superHero)){
+                if (!searchResult.contains(superHero)) {
                     //add element : men add 2 gange?
                     searchResult.add(superHero);
                 }
