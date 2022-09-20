@@ -70,7 +70,6 @@ public class UserInterFace {
         try {
             System.out.println("press the coresponding number:");
             int nr = scanner.nextInt();
-            //TODO kan ikke finde helten man vælger
             SuperHeroList editHero = searchResult.get(nr - 1); // index starter fra 0
             System.out.println("EditHero: " + editHero);
             System.out.println(" ");

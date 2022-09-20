@@ -65,6 +65,8 @@ public class Database {
             String name = superHero.getSuperHeroName().toLowerCase();
             //nu skal den finde dem der passer og add dem til searchResult
             if (name.contains(searchTerm)) {
+
+                //sådan stopper jeg den i at lave flere af den samme element
                 if (!searchResult.contains(superHero)){
                     //add element : men add 2 gange?
                     searchResult.add(superHero);
