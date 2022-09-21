@@ -32,10 +32,11 @@ public class UserInterFace {
         while (userInput != 9) {
             try {
                 userInput = 0;
-                System.out.println("1. for add superhero");
+                System.out.println("1. to add superhero");
                 System.out.println("2. for list of superhero's");
                 System.out.println("3. to search in list");
                 System.out.println("4. to edit Superhero");
+                System.out.println("5. to delete Superhero");
                 System.out.println("9. quit program");
                 System.out.println("----------");
                 userInput = scanner.nextInt();
@@ -47,6 +48,8 @@ public class UserInterFace {
                     searchHero();
                 } else if (userInput == 4) {
                     editHero();
+                } else if (userInput == 5){
+                    deleteHero();
                 }
 
             } catch (InputMismatchException e) {
@@ -56,6 +59,24 @@ public class UserInterFace {
         }
     }
 
+    public void deleteHero(){
+        try{
+
+            //kunne ikke lave en metoder i database der printer en liste med index. så skal have nr fra UI og der efter sletter
+            database.printListWithNumbers();
+            System.out.println("give the coresponding number");
+            int nr = scanner.nextInt();
+            //System.out.println("Deleting hero: " + SuperHeroList);
+            System.out.println(" ");
+
+            database.superheroes.remove(nr-1);
+            System.out.println("Superhero is deletet");
+
+
+        } catch (IndexOutOfBoundsException e){
+            System.out.println("WARNING: not valid input");
+        }
+    }
 
     private void editHero() {
         System.out.println("Search for a hero to start edit");
@@ -66,7 +87,7 @@ public class UserInterFace {
 
         database.searchAndEdit(searchTerm);
 
-        System.out.println(searchResult.size());
+        //System.out.println(searchResult.size());
         try {
             System.out.println("press the coresponding number:");
             int nr = scanner.nextInt();

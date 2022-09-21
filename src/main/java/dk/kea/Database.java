@@ -5,10 +5,9 @@ import java.util.ArrayList;
 
 
 public class Database {
-    Scanner scanner;
     public ArrayList<SuperHeroList> superheroes = new ArrayList<>();
 
-    ArrayList<SuperHeroList> searchResult = new ArrayList<>();
+    public ArrayList<SuperHeroList> searchResult = new ArrayList<>();
 
     public void makeSuperHero(String superHeroName, String realName, String isHuman, int yearOfCreation, int strength) {
         superheroes.add(new SuperHeroList(superHeroName, realName, isHuman, yearOfCreation, strength));
@@ -86,6 +85,12 @@ public class Database {
 
         }
         return searchResult;
+    }
+
+    public void printListWithNumbers() {
+        for (int i = 0; i < superheroes.size(); i++) {
+            System.out.println(i + 1 + ":" + superheroes.get(i));
+        }
     }
 }
 

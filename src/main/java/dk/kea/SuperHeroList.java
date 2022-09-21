@@ -65,6 +65,9 @@ public class SuperHeroList {
                 "\n year of creation: " + yearOfCreation + "\n strengt i newtons: " + strength);
     }
 
+    public void remove() {
+        this.remove();
+    }
 }
 
 
